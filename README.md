@@ -3,7 +3,6 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |name|string|null: false,add_index :users, :name, unique: true|
 |e-mail|string|null: false,unique: true|
 |nickname|string|null: false,add_index :users, :name, unique: true|
@@ -40,7 +39,6 @@
 ## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |comment|text|
 |value|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
@@ -51,7 +49,6 @@
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |image|string|
 |item_id|integer|null: false, foreign_key: true|
 
@@ -61,7 +58,6 @@
 ## moneyテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |price|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
@@ -72,7 +68,6 @@
 ## areaテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |name|string|null: false|
 
 ### Association
@@ -82,7 +77,6 @@
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |name|string|null: false|
 
 ### Association
@@ -91,7 +85,6 @@
 ## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-
 |name|string|null: false|
 
 ### Association
