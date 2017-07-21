@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: morcari_production
-  username: morcari
-  password: <%= ENV['MORCARI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
