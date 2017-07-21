@@ -4,3 +4,30 @@ Started GET "/" for ::1 at 2017-07-21 20:37:05 +0900
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
 Completed 200 OK in 25ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-21 20:50:18 +0900
+Processing by ItemsController#index as HTML
+  Rendered items/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 290ms (Views: 282.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/items-539b1b2d248fcacaf845c897cae976a6.css?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/assets/application-2e9d1cb72084fa4225b20f531bad849f.css?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/assets/jquery_ujs-e9c99e4aa7db66a7f23b948d7d043bd8.js?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/assets/jquery-24e9e31ece1989ef3791bcd53ea38cab.js?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/assets/turbolinks-ed0b02fb503803234719b1ec01b9a090.js?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/assets/application-4475e19f8a4b644e60600a7e8c850d3a.js?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/assets/items-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2017-07-21 20:50:18 +0900
