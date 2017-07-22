@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
     region: 'us-east-1'
   }
 
-  config.fog_directory  = 'morcari-item-image'
-  config.asset_host = 'https://s3-northeast-1.amazonaws.com/morcari-item-image'
+  config.fog_directory  = 'morcari-item-image/uploads/image'
+  config.asset_host = 'https://s3-northeast-1.amazonaws.com/morcari-item-image/uploads/image'
 end
