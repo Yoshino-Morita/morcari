@@ -31,3 +31,21 @@ Started GET "/assets/application-4475e19f8a4b644e60600a7e8c850d3a.js?body=1" for
 
 
 Started GET "/assets/items-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2017-07-21 20:50:18 +0900
+
+
+Started GET "/" for ::1 at 2017-07-22 14:40:49 +0900
+Processing by ItemsController#index as HTML
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 102ms (Views: 90.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-2e9d1cb72084fa4225b20f531bad849f.css?body=1" for ::1 at 2017-07-22 14:40:50 +0900
+
+
+Started GET "/assets/application-4475e19f8a4b644e60600a7e8c850d3a.js?body=1" for ::1 at 2017-07-22 14:40:50 +0900
+
+
+Started GET "/assets/items-f6c6ef02137813db1b2df8e2c31983a1.js?body=1" for ::1 at 2017-07-22 14:40:50 +0900
+
+
+Started GET "/assets/items-539b1b2d248fcacaf845c897cae976a6.css?body=1" for ::1 at 2017-07-22 14:40:50 +0900
