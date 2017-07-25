@@ -1,0 +1,480 @@
+.default-container
+  %header.morcari-header
+    .morcari-header__inner
+      .clearfix
+        %h1.morcari-header__left
+          %a{ href: 'https://www.mercari.com/jp/', class: "header-logo"}
+            = image_tag("logo.svg", class: "top-logo")
+        %form{action: "/", method: "post", class: "morcari-header__right"}
+          %input{name: "title", size: "130", placeholder: "キーワードから探す", class: "morcari-search"}
+      .morcari-header__navibox.clearfix
+        .header-navibox__left
+          %ul.header-nav
+            %li
+              %h2.header-nav__text
+                カテゴリー
+            %li
+              %h2.header-nav__text
+                ブランド
+        .header-navibox__right
+          %ul.user-nav
+            %li
+              マイページ
+            %li
+              お知らせ
+            %li
+              やることリスト
+  %div.morcari-campaign__banner
+    = image_tag("campaign-banner.jpg", class: "banner-image")
+  %div.morcari-main
+    .morcari-main__visual
+      = image_tag("main-image.jpg", class: "main-image")
+    %section.morcari-introduction
+      %h2.intro-text
+        メルカリは、かんたんに売り買いができて、
+        %br
+        あんしん・あんぜんなお取引ができる
+        %br
+        フリマアプリです。
+      %ul.intro-ul
+        %li
+          %h3.intro-title
+            %span.intro-num 1
+            簡単に出品できる
+          = image_tag("intro-num1.jpg", class: "intro-image")
+          %p.intro-description
+            スマホで写真を撮って
+            %br
+            特徴を入力するだけで、
+            %br
+            簡単に出品できます。
+        %li
+          %h3.intro-title
+            %span.intro-num 2
+            すぐに購入できる
+          = image_tag("intro-num2.jpg", class: "intro-image")
+          %p.intro-description
+            ボタン1つで購入。
+            %br
+            あとは出品者からの
+            %br
+            発送を待つだけです。
+        %li
+          %h3.intro-title
+            %span.intro-num 3
+            商品がたくさん
+          = image_tag("intro-num3.jpg", class: "intro-image")
+          %p.intro-description
+            毎日数十万品以上の新商品が
+            %br
+            出品されるので、欲しいものが
+            %br
+            きっと見つかります。
+    %section.middle-introduction
+      = image_tag("middle-image.jpg", class: "middle-image")
+    %section.morcari-features
+      %h2.morcari-features__text
+        メルカリの特徴
+      .morcari-features__container
+        .morcari-features__item
+          %div.features-image
+            = image_tag("item1.svg", class: "item-image")
+          %h3
+            3分でかんたん売り買い
+          %p
+            着なくなった服や小物、本な
+            %br
+            どを売ってみよう！ お小遣い
+            %br
+            稼ぎに使えます
+        .morcari-features__item
+          %div.features-image
+            = image_tag("item2.svg", class: "item-image")
+          %h3
+            あんしんの売買システム
+          %p
+            お金のやりとりはメルカリ
+            %br
+            が仲介し、商品が届いてか
+            %br
+            ら出品者に振り込まれるので
+            %br
+            安心です
+        .morcari-features__item
+          %div.features-image
+            = image_tag("item3.svg", class: "item-image")
+          %h3
+            多彩な支払い方法
+          %p
+            購入した商品のお支払いは、クレジットカード/ポイント/売上金からどうぞ！
+        .morcari-features__item
+          %div.features-image
+            = image_tag("item4.svg", class: "item-image")
+          %h3
+            出品はもちろん無料
+          %p
+            その他、会員登録料・月会費・カード手数料は一切かかりません
+    %section.morcari__template
+      %h2.pickup-head
+        ピックアップカテゴリー
+      %section.items-box__container
+        %h3.items-box__text
+          レディース
+        .item-box__content
+          %section#left-content.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+      %section#other-content.items-box__container
+        %h3.items-box__text
+          メンズ
+        .item-box__content
+          %section#left-content.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+      %section#other-content.items-box__container
+        %h3.items-box__text
+          キッズ
+        .item-box__content
+          %section#left-content.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+    %section.morcari__template#morcari-brand
+      %h2.pickup-head
+        ピックアップブランド
+      %section.items-box__container
+        %h3#brand-title.items-box__text
+          ヴィトン
+        .item-box__content
+          %section#left-content.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+      .non
+      %section.items-box__container
+        %h3#brand-title.items-box__text
+          ヴィトン
+        .item-box__content
+          %section#left-content.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+          %section.items-box
+            %a{ href: 'https://www.mercari.com/jp/'}
+              %figure.items-box__photo
+                = image_tag("sample.jpg", class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  ルイヴィトン
+                .items-box__num
+                  .items-box__price
+                    ¥ 800
+                  %p.items-box__tax
+                    (税 ¥ 0)
+  %div.morcari-app__banner
+    = image_tag("app-banner.jpg", class: "app-image")
+  %footer.morcari-footer
+    %nav
+      %ul
+        %li.footer-cell
+          %h2.footer-head
+            メルカリについて
+          %ul
+            %li
+              %a{ href: 'https://www.mercari.com/jp/privacy/'}
+                プライバシーポリシー
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tos/'}
+                利用規約
+            %li
+              %a{ href: 'https://www.mercari.com/jp/about/'}
+                会社概要(運営会社)
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tokutei/'}
+                特定商取引に関する表記
+            %li
+              %a{ href: 'https://www.mercari.com/jp/safe/compliance/'}
+                法令遵守と犯罪抑止のために
+            %li
+              %a{ href: 'https://www.mercari.com/jp/jobs/'}
+                採用情報
+            %li
+              %a{ href: 'https://www.mercariatte.com/jp/'}
+                メルカリアッテ
+        %li.footer-cell
+          %h2.footer-head
+            メルカリを見る
+          %ul
+            %li
+              %a{ href: 'https://www.mercari.com/jp/privacy/'}
+                カテゴリー一覧
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tos/'}
+                ブランド一覧
+            %li
+              %a{ href: 'https://www.mercari.com/jp/about/'}
+                出品地域一覧
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tokutei/'}
+                公式Twitter
+            %li
+              %a{ href: 'https://www.mercari.com/jp/safe/compliance/'}
+                公式フェイスブック
+        %li.footer-cell
+          %h2.footer-head
+            ヘルプ&ガイド
+          %ul
+            %li
+              %a{ href: 'https://www.mercari.com/jp/privacy/'}
+                メルカリロゴ利用ガイドライン
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tos/'}
+                お知らせ
+            %li
+              %a{ href: 'https://www.mercari.com/jp/about/'}
+                らくらくメルカリ便とは
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tokutei/'}
+                ゆうゆうメルカリ便とは
+            %li
+              %a{ href: 'https://www.mercari.com/jp/safe/compliance/'}
+                大型らくらくメルカリ便とは
+            %li
+              %a{ href: 'https://www.mercari.com/jp/jobs/'}
+                車体取引ガイド
+            %li
+              %a{ href: 'https://www.mercariatte.com/jp/'}
+                返品・返金ポリシー
+            %li
+              %a{ href: 'https://www.mercariatte.com/jp/'}
+                メルカリあんしん・あんぜん宣言！
+            %li
+              %a{ href: 'https://www.mercariatte.com/jp/'}
+                メルカリボックス
+        %li.footer-cell
+          %h2.footer-head
+            国
+          %ul
+            %li
+              %a{ href: 'https://www.mercari.com/jp/privacy/'}
+                United State
+            %li
+              %a{ href: 'https://www.mercari.com/jp/tos/'}
+                United Kingdam
+            %li
+              %a{ href: 'https://www.mercari.com/jp/about/'}
+                日本
+    %a{ href: 'https://www.mercari.com/jp/', class: "footer-logo"}
+      = image_tag("logo-white.svg", class: "logo-image")
+    %p.footer-copyright
+      © 2017 Mercari
