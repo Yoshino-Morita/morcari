@@ -19,11 +19,9 @@
         .header-navibox__right
           %ul.user-nav
             %li
-              マイページ
+              = link_to "ログイン",new_user_session_path, class: "btn-red"
             %li
-              お知らせ
-            %li
-              やることリスト
+              = link_to "新規会員登録",new_user_registration_path, class: "btn-blue"
   %div.morcari-campaign__banner
     = image_tag("campaign-banner.jpg", class: "banner-image")
   %div.morcari-main

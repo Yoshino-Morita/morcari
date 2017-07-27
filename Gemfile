@@ -56,6 +56,7 @@ gem 'sprockets', '2.11.0'
 gem 'carrierwave'
 gem 'fog'
 gem 'haml-rails'
+gem 'devise'
 
 group :production do
   gem 'unicorn'
