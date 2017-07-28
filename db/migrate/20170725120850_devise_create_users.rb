@@ -2,14 +2,25 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :name,               null:false
-      t.string :email,              null: false, default: ""
       t.string :nickname,           null: false
-      t.string :user_photo,         null: false
+      t.string :email,              null: false, default: ""
+      t.string :last_name
+      t.string :first_name
+      t.string :last_kananame
+      t.string :first_kananame
+      t.integer :post_number
+      t.string :city
+      t.string :address
+      t.string :building
+      t.integer :phone_number
+      t.integer :card_number
+      t.integer :expiration_date
+      t.integer :security_code
+      t.string :user_photo
       t.integer :total_money
-      t.integer :review_id,         null: false, foreign_key: true
-      t.integer :area_id,           null: false, foreign_key: true
-      t.string :encrypted_password, null: false, default: ""
+      t.integer :review_id,         foreign_key: true
+      t.integer :area_id,           foreign_key: true
+      t.string :encrypted_password, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -39,8 +50,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-
-    add_index :users, :name,                 unique: true
     add_index :users, :nickname,             unique: true
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
