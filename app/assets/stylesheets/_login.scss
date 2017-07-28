@@ -24,8 +24,8 @@ body{
          }
         }
        }
-    .single-contents{
-      width: 700px;
+    .login-contents{
+      width: 456px;
       margin: 0 auto;
       background-color: #fff;
       .single-head{
@@ -44,30 +44,6 @@ body{
             height: 100%;
             margin: 0 auto ;
             margin-top: 40px;
-            .sns-facebook{
-              background-color: #385185;
-              color: #fff;
-              }
-            .sns-google{
-              background-color: #dc4e41;
-              color: #fff;
-              margin-top: 16px;
-              }
-            .sns-mail{
-              background-color: #eee;
-              color: #000;
-              margin-top: 16px;
-              text-decoration: none;
-              }
-            .btn-default{
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-              border: 1px solid transparent;
-              cursor: pointer;
-              text-align: center;
-              }
             }
           }
         }
