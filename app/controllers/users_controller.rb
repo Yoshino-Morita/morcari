@@ -9,4 +9,10 @@ class UsersController < ApplicationController
   def update
   end
 
+  def entrance
+  end
+
+  def address
+  end
+
 end

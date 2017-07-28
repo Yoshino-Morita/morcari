@@ -1,0 +1,20 @@
+%body
+  .single-container
+    %header.single-header
+      %h1
+        %a{ href: 'https://www.mercari.com/jp/', class: "header-logo"}
+          = image_tag("logo.svg", class: "top-logo")
+    %main.single-main
+      %section.single-contents
+        %h2.single-head
+          新規会員登録
+        .single-inner
+          .single-content
+            %button#facebook-login.sns-facebook.btn-default
+              %i.icon-facebook
+              Facebookで登録
+            %button#google-login.sns-google.btn-default.btn-red
+              %i.icon-google
+              Googleで登録
+            = link_to "メールアドレスで登録",new_user_registration_path, class: "sns-mail btn-default"
+    = render 'footer'

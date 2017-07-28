@@ -4,55 +4,44 @@
       %h1
         %a{ href: 'https://www.mercari.com/jp/', class: "header-logo"}
           = image_tag("logo.svg", class: "top-logo")
+        %nav.clearfix
+          = image_tag("user-create.jpg", class: "right-image")
     %main.single-main
       %section.single-contents
         %h2.single-head
-          新規会員登録
+          会員情報入力
         .single-inner
           .single-content
-            %button#facebook-login.sns-facebook.btn-sns
-              %i.icon-facebook
-              Facebookで登録
-            %button#google-login.sns-google.btn-sns
-              %i.icon-google
-              Googleで登録
-            %a{ href: 'https://www.mercari.com/jp/', class: "sns-mail btn-sns"}
-              %i.icon-mail
-              メールアドレスで登録
-    %footer.single-footer
-      %nav
-        %ul
-          %li
-            %a{ href: 'https://www.mercari.com/jp/privacy/'}
-              プライバシーポリシー
-          %li
-            %a{ href: 'https://www.mercari.com/jp/tos/'}
-              利用規約
-          %li
-            %a{ href: 'https://www.mercari.com/jp/tokutei/'}
-              特定商取引に関する表記
-      %a{ href: 'https://www.mercari.com/jp/', class: "footer-logo"}
-        = image_tag("logo-gray.svg", class: "footer-logo-gray")
-      %p
-        © 2017 Mercari
-/ %h2 Sign up
-/ = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-/   = devise_error_messages!
-/   .field
-/     = f.label :email
-/     %br/
-/     = f.email_field :email, autofocus: true
-/   .field
-/     = f.label :password
-/     - if @minimum_password_length
-/       %em
-/         (#{@minimum_password_length} characters minimum)
-/     %br/
-/     = f.password_field :password, autocomplete: "off"
-/   .field
-/     = f.label :password_confirmation
-/     %br/
-/     = f.password_field :password_confirmation, autocomplete: "off"
-/   .actions
-/     = f.submit "Sign up"
-/ = render "devise/shared/links"
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = devise_error_messages!
+              .form-group
+                .form-group__label
+                  = f.label :"ニックネーム"
+                %span.form-group__require
+                  必須
+                .form-group__input
+                  = f.text_field :nickname, autofocus: true ,placeholder: "例)モルカリ太郎", class: "input-default"
+              .form-group
+                .form-group__label
+                  = f.label :"メールアドレス"
+                %span.form-group__require
+                  必須
+                .form-group__input
+                  = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-default"
+              .form-group
+                .form-group__label
+                  = f.label :"パスワード"
+                %span.form-group__require
+                  必須
+                .form-group__input
+                  = f.password_field :password, autocomplete: "off", placeholder: "6文字以上", class: "input-default"
+              .form-group
+                .form-group__label
+                  = f.label :"パスワード(確認)"
+                %span.form-group__require
+                  必須
+                .form-group__input
+                  = f.password_field :password_confirmation, autocomplete: "off", placeholder: "6文字以上", class: "input-default"
+              .actions
+                = f.submit "次へ進む", class: 'btn-default btn-red'
+    = render 'users/footer'

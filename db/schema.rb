@@ -14,14 +14,25 @@
 ActiveRecord::Schema.define(version: 20170725120850) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                   limit: 255,              null: false
-    t.string   "email",                  limit: 255, default: "", null: false
     t.string   "nickname",               limit: 255,              null: false
-    t.string   "user_photo",             limit: 255,              null: false
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "last_name",              limit: 255
+    t.string   "first_name",             limit: 255
+    t.string   "last_kananame",          limit: 255
+    t.string   "first_kananame",         limit: 255
+    t.integer  "post_number",            limit: 4
+    t.string   "city",                   limit: 255
+    t.string   "address",                limit: 255
+    t.string   "building",               limit: 255
+    t.integer  "phone_number",           limit: 4
+    t.integer  "card_number",            limit: 4
+    t.integer  "expiration_date",        limit: 4
+    t.integer  "security_code",          limit: 4
+    t.string   "user_photo",             limit: 255
     t.integer  "total_money",            limit: 4
-    t.integer  "review_id",              limit: 4,                null: false
-    t.integer  "area_id",                limit: 4,                null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.integer  "review_id",              limit: 4
+    t.integer  "area_id",                limit: 4
+    t.string   "encrypted_password",     limit: 255, default: ""
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -35,7 +46,6 @@ ActiveRecord::Schema.define(version: 20170725120850) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["name"], name: "index_users_on_name", unique: true, using: :btree
   add_index "users", ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
