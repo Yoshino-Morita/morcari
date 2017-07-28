@@ -2431,3 +2431,471 @@ To update, run `gem install bundler`
  DEBUG [eed5b499] 	(See full trace by running task with --trace)
  DEBUG [eed5b499] 	The latest bundler is 1.15.3, but you are currently running 1.15.2.
 To update, run `gem install bundler`
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-07-28 19:56:44 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [7730397d] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@13.113.220.224
+ DEBUG [7730397d] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [7730397d] Finished in 0.487 seconds with exit status 0 (successful).
+  INFO [36d4feda] Running /usr/bin/env mkdir -p /tmp as ec2-user@13.113.220.224
+ DEBUG [36d4feda] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [36d4feda] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-morcari-production-yoshino.sh 0.0%
+  INFO Uploading /tmp/git-ssh-morcari-production-yoshino.sh 100.0%
+  INFO [b42a732e] Running /usr/bin/env chmod 700 /tmp/git-ssh-morcari-production-yoshino.sh as ec2-user@13.113.220.224
+ DEBUG [b42a732e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-morcari-production-yoshino.sh )
+  INFO [b42a732e] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [420cef6b] Running /usr/bin/env git ls-remote git@github.com:Yoshino-Morita/morcari.git HEAD as ec2-user@13.113.220.224
+ DEBUG [420cef6b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git ls-remote git@github.com:Yoshino-Morita/morcari.git HEAD )
+ DEBUG [420cef6b] 	b2896510e3f5ea2211c360e92cdbe5c3e89b2f03	HEAD
+  INFO [420cef6b] Finished in 1.790 seconds with exit status 0 (successful).
+  INFO [180abafb] Running /usr/bin/env mkdir -p /var/www/morcari/shared /var/www/morcari/releases as ec2-user@13.113.220.224
+ DEBUG [180abafb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/morcari/shared /var/www/morcari/releases )
+  INFO [180abafb] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [a3a5abb7] Running /usr/bin/env mkdir -p /var/www/morcari/shared/log /var/www/morcari/shared/tmp/pids /var/www/morcari/shared/tmp/cache /var/www/morcari/shared/tmp/sockets /var/www/morcari/shared/vendor/bundle /var/www/morcari/shared/public/system /var/www/morcari/shared/public/uploads /var/www/morcari/shared/public/assets as ec2-user@13.113.220.224
+ DEBUG [a3a5abb7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/morcari/shared/log /var/www/morcari/shared/tmp/pids /var/www/morcari/shared/tmp/cache /var/www/morcari/shared/tmp/sockets /var/www/morcari/shared/vendor/bundle /var/www/morcari/shared/public/system /var/www/morcari/shared/public/uploads /var/www/morcari/shared/public/assets )
+  INFO [a3a5abb7] Finished in 0.144 seconds with exit status 0 (successful).
+ DEBUG [da3696f9] Running [ -f /var/www/morcari/current/REVISION ] as ec2-user@13.113.220.224
+ DEBUG [da3696f9] Command: [ -f /var/www/morcari/current/REVISION ]
+ DEBUG [da3696f9] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [22127598] Running /usr/bin/env cat /var/www/morcari/current/REVISION 2>/dev/null as ec2-user@13.113.220.224
+ DEBUG [22127598] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cat /var/www/morcari/current/REVISION 2>/dev/null )
+ DEBUG [22127598] 	6b0ad8720c639c458decc07d7447703af927a054
+ DEBUG [22127598] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [cd451e67] Running [ -f /var/www/morcari/repo/HEAD ] as ec2-user@13.113.220.224
+ DEBUG [cd451e67] Command: [ -f /var/www/morcari/repo/HEAD ]
+ DEBUG [cd451e67] Finished in 0.060 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/morcari/repo
+ DEBUG [c9786968] Running if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [c9786968] Command: if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi
+ DEBUG [c9786968] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [bd4a1e4c] Running /usr/bin/env git remote set-url origin git@github.com:Yoshino-Morita/morcari.git as ec2-user@13.113.220.224
+ DEBUG [bd4a1e4c] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git remote set-url origin git@github.com:Yoshino-Morita/morcari.git )
+  INFO [bd4a1e4c] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [427ef0b7] Running /usr/bin/env git remote update --prune as ec2-user@13.113.220.224
+ DEBUG [427ef0b7] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [427ef0b7] 	Fetching origin
+ DEBUG [427ef0b7] 	From github.com:Yoshino-Morita/morcari
+   68aa35d..f241026  Create-user -> Create-user
+   5f1aeab..b289651  master     -> master
+ * [new ref]         refs/pull/8/head -> refs/pull/8/head
+  INFO [427ef0b7] Finished in 1.961 seconds with exit status 0 (successful).
+ DEBUG [724935a9] Running if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [724935a9] Command: if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi
+ DEBUG [724935a9] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [e6cbc049] Running /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105647 as ec2-user@13.113.220.224
+ DEBUG [e6cbc049] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105647 )
+  INFO [e6cbc049] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [bcd3a9a6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/morcari/releases/20170728105647 as ec2-user@13.113.220.224
+ DEBUG [bcd3a9a6] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/morcari/releases/20170728105647 )
+  INFO [bcd3a9a6] Finished in 0.079 seconds with exit status 0 (successful).
+ DEBUG [758489d9] Running if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [758489d9] Command: if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi
+ DEBUG [758489d9] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [40813858] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@13.113.220.224
+ DEBUG [40813858] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [40813858] 	b2896510e3f5ea2211c360e92cdbe5c3e89b2f03
+ DEBUG [40813858] Finished in 0.061 seconds with exit status 0 (successful).
+ DEBUG [f5421436] Running if test ! -d /var/www/morcari/releases/20170728105647; then echo "Directory does not exist '/var/www/morcari/releases/20170728105647'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [f5421436] Command: if test ! -d /var/www/morcari/releases/20170728105647; then echo "Directory does not exist '/var/www/morcari/releases/20170728105647'" 1>&2; false; fi
+ DEBUG [f5421436] Finished in 0.059 seconds with exit status 0 (successful).
+  INFO [f3fc5737] Running /usr/bin/env echo "b2896510e3f5ea2211c360e92cdbe5c3e89b2f03" >> REVISION as ec2-user@13.113.220.224
+ DEBUG [f3fc5737] Command: cd /var/www/morcari/releases/20170728105647 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "b2896510e3f5ea2211c360e92cdbe5c3e89b2f03" >> REVISION )
+  INFO [f3fc5737] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [1fcc484a] Running /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105647 /var/www/morcari/releases/20170728105647/tmp /var/www/morcari/releases/20170728105647/vendor /var/www/morcari/releases/20170728105647/public as ec2-user@13.113.220.224
+ DEBUG [1fcc484a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105647 /var/www/morcari/releases/20170728105647/tmp /var/www/morcari/releases/20170728105647/vendor /var/www/morcari/releases/20170728105647/public )
+  INFO [1fcc484a] Finished in 0.068 seconds with exit status 0 (successful).
+ DEBUG [c01c3473] Running [ -L /var/www/morcari/releases/20170728105647/log ] as ec2-user@13.113.220.224
+ DEBUG [c01c3473] Command: [ -L /var/www/morcari/releases/20170728105647/log ]
+ DEBUG [c01c3473] Finished in 0.059 seconds with exit status 1 (failed).
+ DEBUG [c12a7ad4] Running [ -d /var/www/morcari/releases/20170728105647/log ] as ec2-user@13.113.220.224
+ DEBUG [c12a7ad4] Command: [ -d /var/www/morcari/releases/20170728105647/log ]
+ DEBUG [c12a7ad4] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [23665269] Running /usr/bin/env rm -rf /var/www/morcari/releases/20170728105647/log as ec2-user@13.113.220.224
+ DEBUG [23665269] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/morcari/releases/20170728105647/log )
+  INFO [23665269] Finished in 0.074 seconds with exit status 0 (successful).
+  INFO [98b56c8d] Running /usr/bin/env ln -s /var/www/morcari/shared/log /var/www/morcari/releases/20170728105647/log as ec2-user@13.113.220.224
+ DEBUG [98b56c8d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/log /var/www/morcari/releases/20170728105647/log )
+  INFO [98b56c8d] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [fb91d763] Running [ -L /var/www/morcari/releases/20170728105647/tmp/pids ] as ec2-user@13.113.220.224
+ DEBUG [fb91d763] Command: [ -L /var/www/morcari/releases/20170728105647/tmp/pids ]
+ DEBUG [fb91d763] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [95c95b22] Running [ -d /var/www/morcari/releases/20170728105647/tmp/pids ] as ec2-user@13.113.220.224
+ DEBUG [95c95b22] Command: [ -d /var/www/morcari/releases/20170728105647/tmp/pids ]
+ DEBUG [95c95b22] Finished in 0.058 seconds with exit status 0 (successful).
+  INFO [0cd422d2] Running /usr/bin/env rm -rf /var/www/morcari/releases/20170728105647/tmp/pids as ec2-user@13.113.220.224
+ DEBUG [0cd422d2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/morcari/releases/20170728105647/tmp/pids )
+  INFO [0cd422d2] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [fc35d20c] Running /usr/bin/env ln -s /var/www/morcari/shared/tmp/pids /var/www/morcari/releases/20170728105647/tmp/pids as ec2-user@13.113.220.224
+ DEBUG [fc35d20c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/tmp/pids /var/www/morcari/releases/20170728105647/tmp/pids )
+  INFO [fc35d20c] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [7aced9e2] Running [ -L /var/www/morcari/releases/20170728105647/tmp/cache ] as ec2-user@13.113.220.224
+ DEBUG [7aced9e2] Command: [ -L /var/www/morcari/releases/20170728105647/tmp/cache ]
+ DEBUG [7aced9e2] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [564c6b4a] Running [ -d /var/www/morcari/releases/20170728105647/tmp/cache ] as ec2-user@13.113.220.224
+ DEBUG [564c6b4a] Command: [ -d /var/www/morcari/releases/20170728105647/tmp/cache ]
+ DEBUG [564c6b4a] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [aa9ee21b] Running /usr/bin/env rm -rf /var/www/morcari/releases/20170728105647/tmp/cache as ec2-user@13.113.220.224
+ DEBUG [aa9ee21b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/morcari/releases/20170728105647/tmp/cache )
+  INFO [aa9ee21b] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [094f7561] Running /usr/bin/env ln -s /var/www/morcari/shared/tmp/cache /var/www/morcari/releases/20170728105647/tmp/cache as ec2-user@13.113.220.224
+ DEBUG [094f7561] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/tmp/cache /var/www/morcari/releases/20170728105647/tmp/cache )
+  INFO [094f7561] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [ad07e8da] Running [ -L /var/www/morcari/releases/20170728105647/tmp/sockets ] as ec2-user@13.113.220.224
+ DEBUG [ad07e8da] Command: [ -L /var/www/morcari/releases/20170728105647/tmp/sockets ]
+ DEBUG [ad07e8da] Finished in 0.071 seconds with exit status 1 (failed).
+ DEBUG [64eb4c9d] Running [ -d /var/www/morcari/releases/20170728105647/tmp/sockets ] as ec2-user@13.113.220.224
+ DEBUG [64eb4c9d] Command: [ -d /var/www/morcari/releases/20170728105647/tmp/sockets ]
+ DEBUG [64eb4c9d] Finished in 0.051 seconds with exit status 1 (failed).
+  INFO [6a39c410] Running /usr/bin/env ln -s /var/www/morcari/shared/tmp/sockets /var/www/morcari/releases/20170728105647/tmp/sockets as ec2-user@13.113.220.224
+ DEBUG [6a39c410] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/tmp/sockets /var/www/morcari/releases/20170728105647/tmp/sockets )
+  INFO [6a39c410] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [3f823234] Running [ -L /var/www/morcari/releases/20170728105647/vendor/bundle ] as ec2-user@13.113.220.224
+ DEBUG [3f823234] Command: [ -L /var/www/morcari/releases/20170728105647/vendor/bundle ]
+ DEBUG [3f823234] Finished in 0.053 seconds with exit status 1 (failed).
+ DEBUG [18f1dfbf] Running [ -d /var/www/morcari/releases/20170728105647/vendor/bundle ] as ec2-user@13.113.220.224
+ DEBUG [18f1dfbf] Command: [ -d /var/www/morcari/releases/20170728105647/vendor/bundle ]
+ DEBUG [18f1dfbf] Finished in 0.062 seconds with exit status 1 (failed).
+  INFO [6f2236bc] Running /usr/bin/env ln -s /var/www/morcari/shared/vendor/bundle /var/www/morcari/releases/20170728105647/vendor/bundle as ec2-user@13.113.220.224
+ DEBUG [6f2236bc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/vendor/bundle /var/www/morcari/releases/20170728105647/vendor/bundle )
+  INFO [6f2236bc] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [4ccd72bd] Running [ -L /var/www/morcari/releases/20170728105647/public/system ] as ec2-user@13.113.220.224
+ DEBUG [4ccd72bd] Command: [ -L /var/www/morcari/releases/20170728105647/public/system ]
+ DEBUG [4ccd72bd] Finished in 0.060 seconds with exit status 1 (failed).
+ DEBUG [a242c96e] Running [ -d /var/www/morcari/releases/20170728105647/public/system ] as ec2-user@13.113.220.224
+ DEBUG [a242c96e] Command: [ -d /var/www/morcari/releases/20170728105647/public/system ]
+ DEBUG [a242c96e] Finished in 0.056 seconds with exit status 1 (failed).
+  INFO [aa81f4c3] Running /usr/bin/env ln -s /var/www/morcari/shared/public/system /var/www/morcari/releases/20170728105647/public/system as ec2-user@13.113.220.224
+ DEBUG [aa81f4c3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/public/system /var/www/morcari/releases/20170728105647/public/system )
+  INFO [aa81f4c3] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [21addb66] Running [ -L /var/www/morcari/releases/20170728105647/public/uploads ] as ec2-user@13.113.220.224
+ DEBUG [21addb66] Command: [ -L /var/www/morcari/releases/20170728105647/public/uploads ]
+ DEBUG [21addb66] Finished in 0.053 seconds with exit status 1 (failed).
+ DEBUG [59de7068] Running [ -d /var/www/morcari/releases/20170728105647/public/uploads ] as ec2-user@13.113.220.224
+ DEBUG [59de7068] Command: [ -d /var/www/morcari/releases/20170728105647/public/uploads ]
+ DEBUG [59de7068] Finished in 0.059 seconds with exit status 1 (failed).
+  INFO [dc730165] Running /usr/bin/env ln -s /var/www/morcari/shared/public/uploads /var/www/morcari/releases/20170728105647/public/uploads as ec2-user@13.113.220.224
+ DEBUG [dc730165] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/public/uploads /var/www/morcari/releases/20170728105647/public/uploads )
+  INFO [dc730165] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [b2c40879] Running [ -L /var/www/morcari/releases/20170728105647/public/assets ] as ec2-user@13.113.220.224
+ DEBUG [b2c40879] Command: [ -L /var/www/morcari/releases/20170728105647/public/assets ]
+ DEBUG [b2c40879] Finished in 0.060 seconds with exit status 1 (failed).
+ DEBUG [36d61d5e] Running [ -d /var/www/morcari/releases/20170728105647/public/assets ] as ec2-user@13.113.220.224
+ DEBUG [36d61d5e] Command: [ -d /var/www/morcari/releases/20170728105647/public/assets ]
+ DEBUG [36d61d5e] Finished in 0.060 seconds with exit status 1 (failed).
+  INFO [df49a470] Running /usr/bin/env ln -s /var/www/morcari/shared/public/assets /var/www/morcari/releases/20170728105647/public/assets as ec2-user@13.113.220.224
+ DEBUG [df49a470] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/public/assets /var/www/morcari/releases/20170728105647/public/assets )
+  INFO [df49a470] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [744798e7] Running if test ! -d /var/www/morcari/releases/20170728105647; then echo "Directory does not exist '/var/www/morcari/releases/20170728105647'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [744798e7] Command: if test ! -d /var/www/morcari/releases/20170728105647; then echo "Directory does not exist '/var/www/morcari/releases/20170728105647'" 1>&2; false; fi
+ DEBUG [744798e7] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [4c663c2a] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/morcari/shared/bundle as ec2-user@13.113.220.224
+ DEBUG [4c663c2a] Command: cd /var/www/morcari/releases/20170728105647 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/morcari/shared/bundle )
+ DEBUG [4c663c2a] 	Your Gemfile lists the gem devise (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [4c663c2a] 	The following gems are missing
+ DEBUG [4c663c2a] 	 * net-ssh (4.1.0)
+ DEBUG [4c663c2a] 	 * net-scp (1.2.1)
+ DEBUG [4c663c2a] 	 * sshkit (1.14.0)
+ DEBUG [4c663c2a] 	 * airbrussh (1.3.0)
+ DEBUG [4c663c2a] 	 * debug_inspector (0.0.3)
+ DEBUG [4c663c2a] 	 * binding_of_caller (0.7.2)
+ DEBUG [4c663c2a] 	 * byebug (9.0.6)
+ DEBUG [4c663c2a] 	 * capistrano (3.8.2)
+ DEBUG [4c663c2a] 	 * capistrano-bundler (1.2.0)
+ DEBUG [4c663c2a] 	 * capistrano-rails (1.3.0)
+ DEBUG [4c663c2a] 	 * capistrano-rbenv (2.1.1)
+ DEBUG [4c663c2a] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [4c663c2a] 	 * erb2haml (0.1.5)
+ DEBUG [4c663c2a] 	 * spring (2.0.2)
+ DEBUG [4c663c2a] 	 * web-console (2.3.0)
+ DEBUG [4c663c2a] 	Install missing gems with `bundle install`
+ DEBUG [4c663c2a] 	The latest bundler is 1.15.3, but you are currently running 1.15.2.
+To update, run `gem install bundler`
+ DEBUG [4c663c2a] Finished in 0.322 seconds with exit status 1 (failed).
+  INFO [30ac6c01] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/morcari/shared/bundle --without development test --deployment --quiet as ec2-user@13.113.220.224
+ DEBUG [30ac6c01] Command: cd /var/www/morcari/releases/20170728105647 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/morcari/shared/bundle --without development test --deployment --quiet )
+  INFO [30ac6c01] Finished in 2.415 seconds with exit status 0 (successful).
+ DEBUG [85635898] Running if test ! -d /var/www/morcari/releases/20170728105647; then echo "Directory does not exist '/var/www/morcari/releases/20170728105647'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [85635898] Command: if test ! -d /var/www/morcari/releases/20170728105647; then echo "Directory does not exist '/var/www/morcari/releases/20170728105647'" 1>&2; false; fi
+ DEBUG [85635898] Finished in 0.063 seconds with exit status 0 (successful).
+  INFO [9e9c36d8] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ec2-user@13.113.220.224
+ DEBUG [9e9c36d8] Command: cd /var/www/morcari/releases/20170728105647 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [9e9c36d8] 	rake aborted!
+ DEBUG [9e9c36d8] 	ArgumentError: Missing required arguments: aws_access_key_id, aws_secret_access_key
+ DEBUG [9e9c36d8] 	/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/service.rb:244:in `validate_options'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/service.rb:268:in `handle_settings'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/service.rb:98:in `new'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/services_mixin.rb:16:in `new'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/storage.rb:27:in `new'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave/uploader/configuration.rb:124:in `eager_load_fog'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave/uploader/configuration.rb:137:in `fog_credentials='
+/var/www/morcari/releases/20170728105647/config/initializers/carrierwave.rb:7:in `block in <top (required)>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave/uploader/configuration.rb:159:in `configure'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave.rb:14:in `configure'
+/var/www/morcari/releases/20170728105647/config/initializers/carrierwave.rb:5:in `<top (required)>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:268:in `load'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:268:in `block in load'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:268:in `load'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:652:in `block in load_config_initializer'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/notifications.rb:166:in `instrument'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:651:in `load_config_initializer'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:616:in `block (2 levels) in <class:Engine>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:615:in `each'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:615:in `block in <class:Engine>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `run'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `each'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `tsort_each_child'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:352:in `initialize!'
+/var/www/morcari/releases/20170728105647/config/environment.rb:5:in `<top (required)>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:328:in `require_environment!'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/sprockets-rails-2.3.3/lib/sprockets/rails/task.rb:64:in `block (2 levels) in define'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+/home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+ DEBUG [9e9c36d8] 	Tasks: TOP => environment
+ DEBUG [9e9c36d8] 	(See full trace by running task with --trace)
+ DEBUG [9e9c36d8] 	The latest bundler is 1.15.3, but you are currently running 1.15.2.
+To update, run `gem install bundler`
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-07-28 19:57:40 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [61c83036] Running [ -d $HOME/.rbenv/versions/2.3.1 ] as ec2-user@13.113.220.224
+ DEBUG [61c83036] Command: [ -d $HOME/.rbenv/versions/2.3.1 ]
+ DEBUG [61c83036] Finished in 0.296 seconds with exit status 0 (successful).
+  INFO [90ec0369] Running /usr/bin/env mkdir -p /tmp as ec2-user@13.113.220.224
+ DEBUG [90ec0369] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [90ec0369] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-morcari-production-yoshino.sh 0.0%
+  INFO Uploading /tmp/git-ssh-morcari-production-yoshino.sh 100.0%
+  INFO [2e369e57] Running /usr/bin/env chmod 700 /tmp/git-ssh-morcari-production-yoshino.sh as ec2-user@13.113.220.224
+ DEBUG [2e369e57] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-morcari-production-yoshino.sh )
+  INFO [2e369e57] Finished in 0.061 seconds with exit status 0 (successful).
+  INFO [c2f3619e] Running /usr/bin/env git ls-remote git@github.com:Yoshino-Morita/morcari.git HEAD as ec2-user@13.113.220.224
+ DEBUG [c2f3619e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git ls-remote git@github.com:Yoshino-Morita/morcari.git HEAD )
+ DEBUG [c2f3619e] 	b2896510e3f5ea2211c360e92cdbe5c3e89b2f03	HEAD
+  INFO [c2f3619e] Finished in 1.661 seconds with exit status 0 (successful).
+  INFO [3da211ae] Running /usr/bin/env mkdir -p /var/www/morcari/shared /var/www/morcari/releases as ec2-user@13.113.220.224
+ DEBUG [3da211ae] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/morcari/shared /var/www/morcari/releases )
+  INFO [3da211ae] Finished in 0.077 seconds with exit status 0 (successful).
+  INFO [64599212] Running /usr/bin/env mkdir -p /var/www/morcari/shared/log /var/www/morcari/shared/tmp/pids /var/www/morcari/shared/tmp/cache /var/www/morcari/shared/tmp/sockets /var/www/morcari/shared/vendor/bundle /var/www/morcari/shared/public/system /var/www/morcari/shared/public/uploads /var/www/morcari/shared/public/assets as ec2-user@13.113.220.224
+ DEBUG [64599212] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/morcari/shared/log /var/www/morcari/shared/tmp/pids /var/www/morcari/shared/tmp/cache /var/www/morcari/shared/tmp/sockets /var/www/morcari/shared/vendor/bundle /var/www/morcari/shared/public/system /var/www/morcari/shared/public/uploads /var/www/morcari/shared/public/assets )
+  INFO [64599212] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [01e2c9a3] Running [ -f /var/www/morcari/current/REVISION ] as ec2-user@13.113.220.224
+ DEBUG [01e2c9a3] Command: [ -f /var/www/morcari/current/REVISION ]
+ DEBUG [01e2c9a3] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [ccf00db9] Running /usr/bin/env cat /var/www/morcari/current/REVISION 2>/dev/null as ec2-user@13.113.220.224
+ DEBUG [ccf00db9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env cat /var/www/morcari/current/REVISION 2>/dev/null )
+ DEBUG [ccf00db9] 	6b0ad8720c639c458decc07d7447703af927a054
+ DEBUG [ccf00db9] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [c5ff4609] Running [ -f /var/www/morcari/repo/HEAD ] as ec2-user@13.113.220.224
+ DEBUG [c5ff4609] Command: [ -f /var/www/morcari/repo/HEAD ]
+ DEBUG [c5ff4609] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/morcari/repo
+ DEBUG [f4f13034] Running if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [f4f13034] Command: if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi
+ DEBUG [f4f13034] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [82f673e0] Running /usr/bin/env git remote set-url origin git@github.com:Yoshino-Morita/morcari.git as ec2-user@13.113.220.224
+ DEBUG [82f673e0] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git remote set-url origin git@github.com:Yoshino-Morita/morcari.git )
+  INFO [82f673e0] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [705d933c] Running /usr/bin/env git remote update --prune as ec2-user@13.113.220.224
+ DEBUG [705d933c] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [705d933c] 	Fetching origin
+  INFO [705d933c] Finished in 1.655 seconds with exit status 0 (successful).
+ DEBUG [89cd5c3d] Running if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [89cd5c3d] Command: if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi
+ DEBUG [89cd5c3d] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [414398d0] Running /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105743 as ec2-user@13.113.220.224
+ DEBUG [414398d0] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105743 )
+  INFO [414398d0] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [723212bc] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/morcari/releases/20170728105743 as ec2-user@13.113.220.224
+ DEBUG [723212bc] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/morcari/releases/20170728105743 )
+  INFO [723212bc] Finished in 0.082 seconds with exit status 0 (successful).
+ DEBUG [5b5fd864] Running if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [5b5fd864] Command: if test ! -d /var/www/morcari/repo; then echo "Directory does not exist '/var/www/morcari/repo'" 1>&2; false; fi
+ DEBUG [5b5fd864] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [67df5c97] Running /usr/bin/env git rev-list --max-count=1 master as ec2-user@13.113.220.224
+ DEBUG [67df5c97] Command: cd /var/www/morcari/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-morcari-production-yoshino.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [67df5c97] 	b2896510e3f5ea2211c360e92cdbe5c3e89b2f03
+ DEBUG [67df5c97] Finished in 0.058 seconds with exit status 0 (successful).
+ DEBUG [3ad1e75c] Running if test ! -d /var/www/morcari/releases/20170728105743; then echo "Directory does not exist '/var/www/morcari/releases/20170728105743'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [3ad1e75c] Command: if test ! -d /var/www/morcari/releases/20170728105743; then echo "Directory does not exist '/var/www/morcari/releases/20170728105743'" 1>&2; false; fi
+ DEBUG [3ad1e75c] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [eb9982a3] Running /usr/bin/env echo "b2896510e3f5ea2211c360e92cdbe5c3e89b2f03" >> REVISION as ec2-user@13.113.220.224
+ DEBUG [eb9982a3] Command: cd /var/www/morcari/releases/20170728105743 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env echo "b2896510e3f5ea2211c360e92cdbe5c3e89b2f03" >> REVISION )
+  INFO [eb9982a3] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [2307df32] Running /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105743 /var/www/morcari/releases/20170728105743/tmp /var/www/morcari/releases/20170728105743/vendor /var/www/morcari/releases/20170728105743/public as ec2-user@13.113.220.224
+ DEBUG [2307df32] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /var/www/morcari/releases/20170728105743 /var/www/morcari/releases/20170728105743/tmp /var/www/morcari/releases/20170728105743/vendor /var/www/morcari/releases/20170728105743/public )
+  INFO [2307df32] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [f09d1c4e] Running [ -L /var/www/morcari/releases/20170728105743/log ] as ec2-user@13.113.220.224
+ DEBUG [f09d1c4e] Command: [ -L /var/www/morcari/releases/20170728105743/log ]
+ DEBUG [f09d1c4e] Finished in 0.041 seconds with exit status 1 (failed).
+ DEBUG [83fdc0a5] Running [ -d /var/www/morcari/releases/20170728105743/log ] as ec2-user@13.113.220.224
+ DEBUG [83fdc0a5] Command: [ -d /var/www/morcari/releases/20170728105743/log ]
+ DEBUG [83fdc0a5] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [355d2fd6] Running /usr/bin/env rm -rf /var/www/morcari/releases/20170728105743/log as ec2-user@13.113.220.224
+ DEBUG [355d2fd6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/morcari/releases/20170728105743/log )
+  INFO [355d2fd6] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [570fd91b] Running /usr/bin/env ln -s /var/www/morcari/shared/log /var/www/morcari/releases/20170728105743/log as ec2-user@13.113.220.224
+ DEBUG [570fd91b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/log /var/www/morcari/releases/20170728105743/log )
+  INFO [570fd91b] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [137746eb] Running [ -L /var/www/morcari/releases/20170728105743/tmp/pids ] as ec2-user@13.113.220.224
+ DEBUG [137746eb] Command: [ -L /var/www/morcari/releases/20170728105743/tmp/pids ]
+ DEBUG [137746eb] Finished in 0.059 seconds with exit status 1 (failed).
+ DEBUG [48659f85] Running [ -d /var/www/morcari/releases/20170728105743/tmp/pids ] as ec2-user@13.113.220.224
+ DEBUG [48659f85] Command: [ -d /var/www/morcari/releases/20170728105743/tmp/pids ]
+ DEBUG [48659f85] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [a3324f1f] Running /usr/bin/env rm -rf /var/www/morcari/releases/20170728105743/tmp/pids as ec2-user@13.113.220.224
+ DEBUG [a3324f1f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/morcari/releases/20170728105743/tmp/pids )
+  INFO [a3324f1f] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [be9f8c8e] Running /usr/bin/env ln -s /var/www/morcari/shared/tmp/pids /var/www/morcari/releases/20170728105743/tmp/pids as ec2-user@13.113.220.224
+ DEBUG [be9f8c8e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/tmp/pids /var/www/morcari/releases/20170728105743/tmp/pids )
+  INFO [be9f8c8e] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [362394e6] Running [ -L /var/www/morcari/releases/20170728105743/tmp/cache ] as ec2-user@13.113.220.224
+ DEBUG [362394e6] Command: [ -L /var/www/morcari/releases/20170728105743/tmp/cache ]
+ DEBUG [362394e6] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [5cb57b7d] Running [ -d /var/www/morcari/releases/20170728105743/tmp/cache ] as ec2-user@13.113.220.224
+ DEBUG [5cb57b7d] Command: [ -d /var/www/morcari/releases/20170728105743/tmp/cache ]
+ DEBUG [5cb57b7d] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [7d2535d2] Running /usr/bin/env rm -rf /var/www/morcari/releases/20170728105743/tmp/cache as ec2-user@13.113.220.224
+ DEBUG [7d2535d2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env rm -rf /var/www/morcari/releases/20170728105743/tmp/cache )
+  INFO [7d2535d2] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [01fc2ab3] Running /usr/bin/env ln -s /var/www/morcari/shared/tmp/cache /var/www/morcari/releases/20170728105743/tmp/cache as ec2-user@13.113.220.224
+ DEBUG [01fc2ab3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/tmp/cache /var/www/morcari/releases/20170728105743/tmp/cache )
+  INFO [01fc2ab3] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [0778c1bf] Running [ -L /var/www/morcari/releases/20170728105743/tmp/sockets ] as ec2-user@13.113.220.224
+ DEBUG [0778c1bf] Command: [ -L /var/www/morcari/releases/20170728105743/tmp/sockets ]
+ DEBUG [0778c1bf] Finished in 0.034 seconds with exit status 1 (failed).
+ DEBUG [4bc8ed5b] Running [ -d /var/www/morcari/releases/20170728105743/tmp/sockets ] as ec2-user@13.113.220.224
+ DEBUG [4bc8ed5b] Command: [ -d /var/www/morcari/releases/20170728105743/tmp/sockets ]
+ DEBUG [4bc8ed5b] Finished in 0.050 seconds with exit status 1 (failed).
+  INFO [b40db9e5] Running /usr/bin/env ln -s /var/www/morcari/shared/tmp/sockets /var/www/morcari/releases/20170728105743/tmp/sockets as ec2-user@13.113.220.224
+ DEBUG [b40db9e5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/tmp/sockets /var/www/morcari/releases/20170728105743/tmp/sockets )
+  INFO [b40db9e5] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [4d81e9f6] Running [ -L /var/www/morcari/releases/20170728105743/vendor/bundle ] as ec2-user@13.113.220.224
+ DEBUG [4d81e9f6] Command: [ -L /var/www/morcari/releases/20170728105743/vendor/bundle ]
+ DEBUG [4d81e9f6] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [31d07e4d] Running [ -d /var/www/morcari/releases/20170728105743/vendor/bundle ] as ec2-user@13.113.220.224
+ DEBUG [31d07e4d] Command: [ -d /var/www/morcari/releases/20170728105743/vendor/bundle ]
+ DEBUG [31d07e4d] Finished in 0.038 seconds with exit status 1 (failed).
+  INFO [f586553e] Running /usr/bin/env ln -s /var/www/morcari/shared/vendor/bundle /var/www/morcari/releases/20170728105743/vendor/bundle as ec2-user@13.113.220.224
+ DEBUG [f586553e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/vendor/bundle /var/www/morcari/releases/20170728105743/vendor/bundle )
+  INFO [f586553e] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [19acae55] Running [ -L /var/www/morcari/releases/20170728105743/public/system ] as ec2-user@13.113.220.224
+ DEBUG [19acae55] Command: [ -L /var/www/morcari/releases/20170728105743/public/system ]
+ DEBUG [19acae55] Finished in 0.041 seconds with exit status 1 (failed).
+ DEBUG [94ffd4a9] Running [ -d /var/www/morcari/releases/20170728105743/public/system ] as ec2-user@13.113.220.224
+ DEBUG [94ffd4a9] Command: [ -d /var/www/morcari/releases/20170728105743/public/system ]
+ DEBUG [94ffd4a9] Finished in 0.057 seconds with exit status 1 (failed).
+  INFO [ce23acba] Running /usr/bin/env ln -s /var/www/morcari/shared/public/system /var/www/morcari/releases/20170728105743/public/system as ec2-user@13.113.220.224
+ DEBUG [ce23acba] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/public/system /var/www/morcari/releases/20170728105743/public/system )
+  INFO [ce23acba] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [699a9982] Running [ -L /var/www/morcari/releases/20170728105743/public/uploads ] as ec2-user@13.113.220.224
+ DEBUG [699a9982] Command: [ -L /var/www/morcari/releases/20170728105743/public/uploads ]
+ DEBUG [699a9982] Finished in 0.028 seconds with exit status 1 (failed).
+ DEBUG [aca903fa] Running [ -d /var/www/morcari/releases/20170728105743/public/uploads ] as ec2-user@13.113.220.224
+ DEBUG [aca903fa] Command: [ -d /var/www/morcari/releases/20170728105743/public/uploads ]
+ DEBUG [aca903fa] Finished in 0.030 seconds with exit status 1 (failed).
+  INFO [67987619] Running /usr/bin/env ln -s /var/www/morcari/shared/public/uploads /var/www/morcari/releases/20170728105743/public/uploads as ec2-user@13.113.220.224
+ DEBUG [67987619] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/public/uploads /var/www/morcari/releases/20170728105743/public/uploads )
+  INFO [67987619] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [890769e4] Running [ -L /var/www/morcari/releases/20170728105743/public/assets ] as ec2-user@13.113.220.224
+ DEBUG [890769e4] Command: [ -L /var/www/morcari/releases/20170728105743/public/assets ]
+ DEBUG [890769e4] Finished in 0.027 seconds with exit status 1 (failed).
+ DEBUG [e8531387] Running [ -d /var/www/morcari/releases/20170728105743/public/assets ] as ec2-user@13.113.220.224
+ DEBUG [e8531387] Command: [ -d /var/www/morcari/releases/20170728105743/public/assets ]
+ DEBUG [e8531387] Finished in 0.029 seconds with exit status 1 (failed).
+  INFO [a1f063cf] Running /usr/bin/env ln -s /var/www/morcari/shared/public/assets /var/www/morcari/releases/20170728105743/public/assets as ec2-user@13.113.220.224
+ DEBUG [a1f063cf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env ln -s /var/www/morcari/shared/public/assets /var/www/morcari/releases/20170728105743/public/assets )
+  INFO [a1f063cf] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [cf301845] Running if test ! -d /var/www/morcari/releases/20170728105743; then echo "Directory does not exist '/var/www/morcari/releases/20170728105743'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [cf301845] Command: if test ! -d /var/www/morcari/releases/20170728105743; then echo "Directory does not exist '/var/www/morcari/releases/20170728105743'" 1>&2; false; fi
+ DEBUG [cf301845] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [d8699b97] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/morcari/shared/bundle as ec2-user@13.113.220.224
+ DEBUG [d8699b97] Command: cd /var/www/morcari/releases/20170728105743 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/morcari/shared/bundle )
+ DEBUG [d8699b97] 	Your Gemfile lists the gem devise (>= 0) more than once.
+You should probably keep only one of them.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+ DEBUG [d8699b97] 	The following gems are missing
+ DEBUG [d8699b97] 	 * net-ssh (4.1.0)
+ DEBUG [d8699b97] 	 * net-scp (1.2.1)
+ DEBUG [d8699b97] 	 * sshkit (1.14.0)
+ DEBUG [d8699b97] 	 * airbrussh (1.3.0)
+ DEBUG [d8699b97] 	 * debug_inspector (0.0.3)
+ DEBUG [d8699b97] 	 * binding_of_caller (0.7.2)
+ DEBUG [d8699b97] 	 * byebug (9.0.6)
+ DEBUG [d8699b97] 	 * capistrano (3.8.2)
+ DEBUG [d8699b97] 	 * capistrano-bundler (1.2.0)
+ DEBUG [d8699b97] 	 * capistrano-rails (1.3.0)
+ DEBUG [d8699b97] 	 * capistrano-rbenv (2.1.1)
+ DEBUG [d8699b97] 	 * capistrano3-unicorn (0.2.1)
+ DEBUG [d8699b97] 	 * erb2haml (0.1.5)
+ DEBUG [d8699b97] 	 * spring (2.0.2)
+ DEBUG [d8699b97] 	 * web-console (2.3.0)
+ DEBUG [d8699b97] 	Install missing gems with `bundle install`
+ DEBUG [d8699b97] 	The latest bundler is 1.15.3, but you are currently running 1.15.2.
+To update, run `gem install bundler`
+ DEBUG [d8699b97] Finished in 0.296 seconds with exit status 1 (failed).
+  INFO [cabdf881] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/morcari/shared/bundle --without development test --deployment --quiet as ec2-user@13.113.220.224
+ DEBUG [cabdf881] Command: cd /var/www/morcari/releases/20170728105743 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/morcari/shared/bundle --without development test --deployment --quiet )
+  INFO [cabdf881] Finished in 2.404 seconds with exit status 0 (successful).
+ DEBUG [bba3fb5b] Running if test ! -d /var/www/morcari/releases/20170728105743; then echo "Directory does not exist '/var/www/morcari/releases/20170728105743'" 1>&2; false; fi as ec2-user@13.113.220.224
+ DEBUG [bba3fb5b] Command: if test ! -d /var/www/morcari/releases/20170728105743; then echo "Directory does not exist '/var/www/morcari/releases/20170728105743'" 1>&2; false; fi
+ DEBUG [bba3fb5b] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [60377956] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as ec2-user@13.113.220.224
+ DEBUG [60377956] Command: cd /var/www/morcari/releases/20170728105743 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [60377956] 	rake aborted!
+ DEBUG [60377956] 	ArgumentError: Missing required arguments: aws_access_key_id, aws_secret_access_key
+ DEBUG [60377956] 	/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/service.rb:244:in `validate_options'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/service.rb:268:in `handle_settings'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/service.rb:98:in `new'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/core/services_mixin.rb:16:in `new'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/fog-core-1.44.3/lib/fog/storage.rb:27:in `new'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave/uploader/configuration.rb:124:in `eager_load_fog'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave/uploader/configuration.rb:137:in `fog_credentials='
+/var/www/morcari/releases/20170728105743/config/initializers/carrierwave.rb:7:in `block in <top (required)>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave/uploader/configuration.rb:159:in `configure'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/carrierwave-1.1.0/lib/carrierwave.rb:14:in `configure'
+/var/www/morcari/releases/20170728105743/config/initializers/carrierwave.rb:5:in `<top (required)>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:268:in `load'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:268:in `block in load'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:268:in `load'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:652:in `block in load_config_initializer'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/notifications.rb:166:in `instrument'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:651:in `load_config_initializer'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:616:in `block (2 levels) in <class:Engine>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:615:in `each'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/engine.rb:615:in `block in <class:Engine>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `instance_exec'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:30:in `run'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `each'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:44:in `tsort_each_child'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/initializable.rb:54:in `run_initializers'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:352:in `initialize!'
+/var/www/morcari/releases/20170728105743/config/environment.rb:5:in `<top (required)>'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `block in require'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:240:in `load_dependency'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:274:in `require'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:328:in `require_environment!'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/railties-4.2.6/lib/rails/application.rb:457:in `block in run_tasks_blocks'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/sprockets-rails-2.3.3/lib/sprockets/rails/task.rb:64:in `block (2 levels) in define'
+/var/www/morcari/shared/bundle/ruby/2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `load'
+/home/ec2-user/.rbenv/versions/2.3.1/bin/bundle:23:in `<main>'
+ DEBUG [60377956] 	Tasks: TOP => environment
+ DEBUG [60377956] 	(See full trace by running task with --trace)
+ DEBUG [60377956] 	The latest bundler is 1.15.3, but you are currently running 1.15.2.
+To update, run `gem install bundler`
