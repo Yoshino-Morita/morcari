@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725120850) do
+ActiveRecord::Schema.define(version: 20170731040755) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname",               limit: 255,              null: false
@@ -26,7 +32,6 @@ ActiveRecord::Schema.define(version: 20170725120850) do
     t.string   "building",               limit: 255
     t.integer  "phone_number",           limit: 4
     t.integer  "card_number",            limit: 4
-    t.integer  "expiration_date",        limit: 4
     t.integer  "security_code",          limit: 4
     t.string   "user_photo",             limit: 255
     t.integer  "total_money",            limit: 4
@@ -43,6 +48,8 @@ ActiveRecord::Schema.define(version: 20170725120850) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.integer  "expiration_month",       limit: 4
+    t.integer  "expiration_year",        limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

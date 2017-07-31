@@ -3,7 +3,7 @@
     .morcari-header__inner
       .clearfix
         %h1.morcari-header__left
-          %a{ href: 'https://www.mercari.com/jp/', class: "header-logo"}
+          = link_to root_path, {class: "header-logo"} do
             = image_tag("logo.svg", class: "top-logo")
         %form{action: "/", method: "post", class: "morcari-header__right"}
           %input{name: "title", size: "130", placeholder: "キーワードから探す", class: "morcari-search"}

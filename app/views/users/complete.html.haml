@@ -1,0 +1,19 @@
+%body
+  .single-container
+    %header.single-header
+      %h1
+        = link_to root_path, {class: "header-logo"} do
+          = image_tag("logo.svg", class: "top-logo")
+        %nav.clearfix
+          = image_tag("user-complete.jpg", class: "right-image")
+    %main.single-main
+      %section.single-contents
+        %h2.single-head
+          会員登録完了
+        .single-inner
+          .single-content
+            %p
+              ありがとうございます。会員登録が完了しました。
+            = link_to "メルカリをはじめる","/users/current_user.id",method: :get, class: "btn-default btn-red"
+      = image_tag("banner-pc.jpg", class: "pcbanner-image")
+    = render 'users/footer'
