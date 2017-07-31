@@ -1,0 +1,18 @@
+%body
+  .single-container
+    %header.single-header
+    %main.single-main
+      %section.login-contents
+        .login-head
+          %p.login-head__title
+            アカウントをお持ちでない方はこちら
+          = link_to "新規会員登録", "entrance", class: "login-head__btn"
+        .single-inner
+          .single-content
+            %button#facebook-login.sns-facebook.btn-default
+              %i.icon-facebook
+              Facebookでログイン
+            %button#google-login.sns-google.btn-default.btn-red
+              %i.icon-google
+              Googleでログイン
+    = render 'users/footer'

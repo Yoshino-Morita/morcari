@@ -2,7 +2,7 @@
   .single-container
     %header.single-header
       %h1
-        %a{ href: 'https://www.mercari.com/jp/', class: "header-logo"}
+        = link_to root_path, {class: "header-logo"} do
           = image_tag("logo.svg", class: "top-logo")
         %nav.clearfix
           = image_tag("user-create.jpg", class: "right-image")

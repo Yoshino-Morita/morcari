@@ -1,7 +1,9 @@
 %body
   .single-container
     %header.single-header
-      / = render 'registrations/header'
+      %h1
+        = link_to root_path, {class: "header-logo"} do
+          = image_tag("logo.svg", class: "top-logo")
     %main.single-main
       %section.login-contents
         .login-head
@@ -16,24 +18,12 @@
             %button#google-login.sns-google.btn-default.btn-red
               %i.icon-google
               Googleでログイン
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .form-group
+                .form-group__input
+                  = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "input-default"
+                .form-group__input#login-input
+                  = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "input-default"
+                .actions
+                  = f.submit "ログイン", class: 'btn-default btn-red'
     = render 'users/footer'
-
-
-
-/ %h2 Log in
-/ = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-/   .field
-/     = f.label :email
-/     %br/
-/     = f.email_field :email, autofocus: true
-/   .field
-/     = f.label :password
-/     %br/
-/     = f.password_field :password, autocomplete: "off"
-/   - if devise_mapping.rememberable?
-/     .field
-/       = f.check_box :remember_me
-/       = f.label :remember_me
-/   .actions
-/     = f.submit "Log in"
-/ = render "devise/shared/links"
