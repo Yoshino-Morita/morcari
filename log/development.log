@@ -27337,3 +27337,134 @@ Processing by UsersController#entrance as HTML
   Rendered users/_footer.html.haml (1.0ms)
   Rendered users/entrance.html.haml within layouts/application (3.6ms)
 Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-08-01 12:00:23 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendered users/_footer.html.haml (5.1ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (53.0ms)
+Completed 200 OK in 195ms (Views: 155.0ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2017-08-01 12:00:37 +0900
+Processing by ItemsController#index as HTML
+  Rendered items/_main.html.haml (78.6ms)
+  Rendered items/_top_footer.html.haml (11.7ms)
+  Rendered items/index.html.haml within layouts/application (120.0ms)
+Completed 200 OK in 168ms (Views: 167.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/entrance" for ::1 at 2017-08-01 12:00:41 +0900
+Processing by UsersController#entrance as HTML
+  Rendered users/_footer.html.haml (0.9ms)
+  Rendered users/entrance.html.haml within layouts/application (28.2ms)
+Completed 200 OK in 88ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-08-01 12:00:44 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendered users/_footer.html.haml (1.6ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (33.0ms)
+Completed 200 OK in 142ms (Views: 140.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-08-01 12:16:47 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fE2CqEfAFrJBHPiU9GEKfK4tRXVAVrj5U9JKwO38GaxgOH9ccjRMrKgDTQo8hoQC5fSpIQoVpWfDdVvH/mqAiQ==", "user"=>{"nickname"=>"もりもりた", "email"=>"rxrjy5717@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"次へ進む"}
+  [1m[35m (2.0ms)[0m  BEGIN
+  [1m[36mUser Exists (3.7ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rxrjy5717@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `nickname`, `created_at`, `updated_at`) VALUES ('rxrjy5717@gmail.com', '$2a$11$How.pfOeUIIvhyqYbpTRcuucX1eQ0/P/Yx94GaakNFlelBWO0kAca', 'もりもりた', '2017-08-01 03:16:47', '2017-08-01 03:16:47')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (5.7ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-08-01 03:16:47', `current_sign_in_at` = '2017-08-01 03:16:47', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2017-08-01 03:16:47' WHERE `users`.`id` = 35[0m
+  [1m[35m (5.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/35/address
+Completed 302 Found in 200ms (ActiveRecord: 21.1ms)
+
+
+Started GET "/users/35/address" for ::1 at 2017-08-01 12:16:48 +0900
+Processing by UsersController#address as HTML
+  Parameters: {"user_id"=>"35"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 35  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mArea Load (7.2ms)[0m  SELECT `areas`.* FROM `areas`
+  Rendered users/_footer.html.haml (0.5ms)
+  Rendered users/address.html.haml within layouts/application (34.5ms)
+Completed 200 OK in 400ms (Views: 381.6ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/assets/application-64544487c4403b949cb4142fb44cd7d0.css?body=1" for ::1 at 2017-08-01 12:16:48 +0900
+
+
+Started PATCH "/users/35/address_create" for ::1 at 2017-08-01 12:17:42 +0900
+Processing by UsersController#address_create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f9xvDrnC2i9+1jJeRzGNM53rQr1QSbFMQ14USib+CJFjqZL6jDaAMZfJh8CP1gNN1jKu6RoKrNLT+QVNNWiRtA==", "user"=>{"last_name"=>"森田", "first_name"=>"善乃", "last_kananame"=>"モリタ", "first_kananame"=>"ヨシノ", "post_number"=>"123-4567", "area_id"=>"1", "city"=>"横浜市中区", "address"=>"桜木町1-1", "building"=>"モルカリビル", "phone_number"=>"09012345678"}, "commit"=>"次へ進む", "user_id"=>"35"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 35  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+RangeError (9012345678 is out of range for ActiveRecord::Type::Integer with limit 4):
+  app/controllers/users_controller.rb:27:in `address_create'
+
+
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.4ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.9ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/yoshino/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.8ms)
+
+
+Started PATCH "/users/35/address_create" for ::1 at 2017-08-01 12:17:53 +0900
+Processing by UsersController#address_create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f9xvDrnC2i9+1jJeRzGNM53rQr1QSbFMQ14USib+CJFjqZL6jDaAMZfJh8CP1gNN1jKu6RoKrNLT+QVNNWiRtA==", "user"=>{"last_name"=>"森田", "first_name"=>"善乃", "last_kananame"=>"モリタ", "first_kananame"=>"ヨシノ", "post_number"=>"123-4567", "area_id"=>"1", "city"=>"横浜市中区", "address"=>"桜木町1-1", "building"=>"モルカリビル", "phone_number"=>"0901"}, "commit"=>"次へ進む", "user_id"=>"35"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 35  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_name` = '森田', `first_name` = '善乃', `last_kananame` = 'モリタ', `first_kananame` = 'ヨシノ', `post_number` = 123, `city` = '横浜市中区', `address` = '桜木町1-1', `building` = 'モルカリビル', `phone_number` = 901, `area_id` = 1, `updated_at` = '2017-08-01 03:17:53' WHERE `users`.`id` = 35
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/35/credit
+Completed 302 Found in 10ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/35/credit" for ::1 at 2017-08-01 12:17:53 +0900
+Processing by UsersController#credit as HTML
+  Parameters: {"user_id"=>"35"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 35  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered users/_footer.html.haml (0.7ms)
+  Rendered users/credit.html.haml within layouts/application (22.4ms)
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/35/credit_create" for ::1 at 2017-08-01 12:18:03 +0900
+Processing by UsersController#credit_create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X4TTiiGA8VS+lldRvnYItLmZXQr+SX2bpkpvjM6DyuBD8S5+FHSrSleJ4s92kYbK8kCxXrQKYAU27X6L3RVTxQ==", "user"=>{"card_number"=>"1234", "expiration_month"=>"1", "expiration_year"=>"2017", "security_code"=>"1234"}, "commit"=>"次へ進む", "user_id"=>"35"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 35  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mUPDATE `users` SET `card_number` = 1234, `expiration_year` = 2017, `expiration_month` = 1, `security_code` = 1234, `updated_at` = '2017-08-01 03:18:03' WHERE `users`.`id` = 35[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/35/complete
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/35/complete" for ::1 at 2017-08-01 12:18:03 +0900
+Processing by UsersController#complete as HTML
+  Parameters: {"user_id"=>"35"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 35  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered users/_footer.html.haml (0.6ms)
+  Rendered users/complete.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/current_user.id" for ::1 at 2017-08-01 12:18:05 +0900
+Processing by UsersController#show as 
+  Parameters: {"authenticity_token"=>"NL4JqyCMDUGqHqvcGnHsv058zhkdAV9PYQ1h5/Lut/soy/RfFXhXX0MBHkLSlmLBBaUiTVdCQtHxqnDg4Xgu3g==", "id"=>"current_user"}
+  Rendered users/_footer.html.haml (4.4ms)
+  Rendered users/show.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.0ms)
