@@ -41,7 +41,7 @@
                   = f.label :"都道府県"
                 %span.form-group__require
                   必須
-                .select-prefecture
+                .form-group__contain
                   .form-group__input
                     = f.collection_select :area_id, Area.all, :id, :name
                   %i.fa.fa-chevron-down

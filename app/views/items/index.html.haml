@@ -1,36 +1,6 @@
 .default-container
   %header.morcari-header
-    .morcari-header__inner
-      .clearfix
-        %h1.morcari-header__left
-          = link_to root_path, {class: "header-logo"} do
-            = image_tag("logo.svg", class: "top-logo")
-        %form{action: "/", method: "post", class: "morcari-header__right"}
-          %input{name: "title", size: "130", placeholder: "キーワードから探す", class: "morcari-search"}
-      .morcari-header__navibox.clearfix
-        .header-navibox__left
-          %ul.header-nav
-            %li
-              %h2.header-nav__text
-                カテゴリー
-            %li
-              %h2.header-nav__text
-                ブランド
-        .header-navibox__right
-          - if user_signed_in?
-            %ul.user-nav
-              %li
-                = link_to "ログアウト(仮)",destroy_user_session_path, class: "btn-red", method: :delete
-              %li
-                = link_to "お知らせ","users/entrance", class: "btn-blue"
-              %li
-                = link_to "やることリスト","users/entrance", class: "btn-blue"
-          - else
-            %ul.user-nav
-              %li
-                = link_to "ログイン",new_user_session_path, class: "btn-red"
-              %li
-                = link_to "新規会員登録","users/entrance", class: "btn-blue"
+    = render 'top_header'
   %div.morcari-campaign__banner
     = image_tag("campaign-banner.jpg", class: "banner-image")
   %div.morcari-main
