@@ -52,13 +52,13 @@
                     .form-group__contain
                       .form-group__input
                         = f.collection_select :category_large_id, Category.where(id: 1..3), :id, :name
-                      %i.fa.fa-chevron-down
+                      %i.fa.fa-chevron-down#first-cursor
                       .form-group__input
                         = f.collection_select :category_large_id, Category.where(id: 1..3), :id, :name
                       %i.fa.fa-chevron-down
                       .form-group__input
                         = f.collection_select :category_large_id, Category.where(id: 1..3), :id, :name
-                      %i.fa.fa-chevron-down
+                      %i.fa.fa-chevron-down#second-cursor
                   .form-group
                     .form-group__label
                       = f.label :"商品の状態"
