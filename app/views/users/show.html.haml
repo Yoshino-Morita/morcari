@@ -1,18 +1,19 @@
-%body
-  .single-container
-    %header.single-header
-    %main.single-main
-      %section.login-contents
-        .login-head
-          %p.login-head__title
-            アカウントをお持ちでない方はこちら
-          = link_to "新規会員登録", "entrance", class: "login-head__btn"
-        .single-inner
-          .single-content
-            %button#facebook-login.sns-facebook.btn-default
-              %i.icon-facebook
-              Facebookでログイン
-            %button#google-login.sns-google.btn-default.btn-red
-              %i.icon-google
-              Googleでログイン
-    = render 'users/footer'
+.default-container
+  %header.morcari-header
+    = render 'items/top_header'
+  %nav.bread-crumbs
+    %ul
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "メルカリ", root_path, {itemprop: "url"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        %span{itemprop: "title"}
+          マイページ
+  %main.mypage-container.clearfix
+    = render 'users/mypage/mypage_main'
+    .mypage-side
+      = render "users/mypage/mypage_sidebar"
+  %div.morcari-app__banner
+    = image_tag("app-banner.jpg", class: "app-image")
+  %footer.morcari-footer
+    = render 'items/top_footer'

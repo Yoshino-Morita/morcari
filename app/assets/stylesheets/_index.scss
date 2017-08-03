@@ -13,7 +13,6 @@ html,body{
     margin: 0 200px;
    .morcari-header__left{
     margin: 0 auto;
-    padding-left: 60px;
     float: left;
      .top-logo{
         width: 134px;
@@ -35,6 +34,7 @@ html,body{
         .header-nav{
           list-style: none;
           margin: 0;
+          padding: 0;
           li{
             position: relative;
             display: inline-block;
@@ -54,20 +54,34 @@ html,body{
       }
      }
      .header-navibox__right{
-      height: 24px;
+      height: 35px;
       float: right;
       .user-nav{
         list-style: none;
         margin: 0 ;
         li{
-          position: relative;
           display: inline-block;
           font-size: 14px;
-          height: 20px;
+          height: 38px;
           line-height: 20px;
           margin-left: 8px;
           color: #333;
           font-weight: 400;
+          vertical-align: middle;
+          a{
+            font-size: 14px;
+            line-height: 30px;
+            color: #333;
+            text-decoration: none;
+          }
+          img{
+            float: left;
+            overflow: hidden;
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+            border-radius: 50%;
+          }
          .btn-red{
             color: #fff;
             background: #ea352d;
@@ -371,6 +385,26 @@ html,body{
     text-align: center;
     margin-top: 8px;
   }
+  .footer-sell__btn{
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 160px;
+    height: 160px;
+    font-size: 22px;
+    border-radius: 50%;
+    background: #ea352d;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    .footer-sell__title{
+      margin-top: 32px;
+     }
+    .fa.fa-camera{
+      margin: 8px 0 0;
+      font-size: 60px;
+     }
+   }
  }
 .items-box__container:after {
   content: '';
