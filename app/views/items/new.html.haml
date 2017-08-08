@@ -51,18 +51,61 @@
                       必須
                     .form-group__contain
                       .form-group__input#parent
-                        = f.collection_select :category_large_id, Category.where(id: 1..3), :id, :name, {include_blank: "---"},{class: "category-large"}
+                        = f.collection_select :category_large_id, Category.where(id: 1..12), :id, :name, {include_blank: "---"},{class: "category-large"}
                         %i.fa.fa-chevron-down
                       .form-group__input#children
-                        = f.collection_select :category_middle_id, Category.where(id:  4..22), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "1"}
-                        = f.collection_select :category_middle_id, Category.where(id: 23..36), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "2"}
-                        = f.collection_select :category_middle_id, Category.where(id: 37..51), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "3"}
+                        = f.collection_select :category_middle_id, Category.where(id:  13..31), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "1"}
+                        = f.collection_select :category_middle_id, Category.where(id: 32..45), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "2"}
+                        = f.collection_select :category_middle_id, Category.where(id: 46..60), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "3"}
+                        = f.collection_select :category_middle_id, Category.where(id: 61..73), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "4"}
+                        = f.collection_select :category_middle_id, Category.where(id: 74..91), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "5"}
+                        = f.collection_select :category_middle_id, Category.where(id: 92..101), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "6"}
+                        = f.collection_select :category_middle_id, Category.where(id: 102..111), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "7"}
+                        = f.collection_select :category_middle_id, Category.where(id: 112..120), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "8"}
+                        = f.collection_select :category_middle_id, Category.where(id: 121..129), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "9"}
+                        = f.collection_select :category_middle_id, Category.where(id: 130..138), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "10"}
+                        = f.collection_select :category_middle_id, Category.where(id: 139..140), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "11"}
+                        = f.collection_select :category_middle_id, Category.where(id: 141..148), :id, :name, {include_blank: "---"}, {class: "category-middle", "data-val": "12"}
                         %select.fa.fa-chevron-down#children
                       .form-group__input#grandson
-                        = f.collection_select :category_small_id, Category.where(id:  52..69), :id, :name, {include_blank: "---"}, {class: "category-middle"}
-                        = f.collection_select :category_small_id, Category.where(id: 23..36), :id, :name, {include_blank: "---"}, {class: "category-middle"}
-                        = f.collection_select :category_small_id, Category.where(id: 37..51), :id, :name, {include_blank: "---"}, {class: "category-middle"}
+                        = f.collection_select :category_small_id, Category.where(id:  150..167), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "13"}
+                        = f.collection_select :category_small_id, Category.where(id:  169..189), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "14"}
+                        = f.collection_select :category_small_id, Category.where(id:  191..202), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "15"}
+                        = f.collection_select :category_small_id, Category.where(id:  204..208), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "16"}
+                        = f.collection_select :category_small_id, Category.where(id:  210..213), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "17"}
+                        = f.collection_select :category_small_id, Category.where(id:  215..224), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "18"}
+                        = f.collection_select :category_small_id, Category.where(id:  226..227), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "19"}
+                        = f.collection_select :category_small_id, Category.where(id:  229..233), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "20"}
+                        = f.collection_select :category_small_id, Category.where(id:  235..241), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "21"}
+                        = f.collection_select :category_small_id, Category.where(id:  243..260), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "22"}
+                        = f.collection_select :category_small_id, Category.where(id:  262..272), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "23"}
+                        = f.collection_select :category_small_id, Category.where(id:  274..277), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "24"}
+                        = f.collection_select :category_small_id, Category.where(id:  279..301), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "25"}
+                        = f.collection_select :category_small_id, Category.where(id:  303..308), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "26"}
+                        = f.collection_select :category_small_id, Category.where(id:  310..315), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "27"}
+                        = f.collection_select :category_small_id, Category.where(id:  317..324), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "28"}
+                        = f.collection_select :category_small_id, Category.where(id:  326..332), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "29"}
+                        = f.collection_select :category_small_id, Category.where(id:  334..342), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "30"}
+                        = f.collection_select :category_small_id, Category.where(id:  344..346), :id, :name, {include_blank: "---"}, {class: "category-small", "data-val": "31"}
                         %select.fa.fa-chevron-down#grandson
+                  .form-group
+                    .form-group__label
+                      = f.label :"サイズ"
+                    %span.form-group__require
+                      必須
+                    .form-group__contain
+                      .form-group__input
+                        = f.select :size,[["---", "---"], ["XS以下", "XS以下"], ["S", "S"], ["M", "M"], ["L", "L"], ["XL", "XL"], ["XL以上", "XL以上"], ["FREE SIZE", "FREE SIZE"]],disabled: "---", selected: "---"
+                      %i.fa.fa-chevron-down
+                  .form-group
+                    .form-group__label
+                      = f.label :"ブランド"
+                    %span.form-group__require#any
+                      任意
+                    .form-group__contain
+                      .form-group__input
+                        = f.collection_select :brand_id, Brand.where(id: 1..100), :id, :name, {include_blank: "---"}
+                      %i.fa.fa-chevron-down
                   .form-group
                     .form-group__label
                       = f.label :"商品の状態"
