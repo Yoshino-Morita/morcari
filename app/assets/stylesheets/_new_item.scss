@@ -17,6 +17,24 @@
 #second-cursor{
   padding-top: 28%;
 }
+#children select{
+  display:none;
+}
+#children select.on {
+  display:block;
+}
+#grandson select{
+  display:none;
+}
+#grandson select.on {
+  display:block;
+}
+#delivery-children{
+  display: none;
+}
+#delivery-children.on{
+  display: block;
+}
 .sell-upload{
   &__box{
     width: 620px;
@@ -102,6 +120,9 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+    }
+    .form-group__input{
+      position: relative;
     }
     .fa-chevron-down{
       position: absolute;

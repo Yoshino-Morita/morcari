@@ -43,7 +43,7 @@
                   必須
                 .form-group__contain
                   .form-group__input
-                    = f.collection_select :area_id, Area.all, :id, :name
+                    = f.collection_select :area_id, Area.all, :id, :name, {include_blank: "---"}
                   %i.fa.fa-chevron-down
               .form-group
                 .form-group__label
