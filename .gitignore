@@ -1,1 +1,9 @@
 config/secrets.yml
+
+# Ignore image.files
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+public/uploads/*

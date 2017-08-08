@@ -58,6 +58,9 @@ gem 'fog'
 gem 'haml-rails'
 gem 'devise'
 gem "font-awesome-rails"
+gem 'mechanize'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
