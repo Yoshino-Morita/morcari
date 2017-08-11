@@ -93,6 +93,7 @@
           text-align: center;
           #non-active{
             background-color: #eee;
+            border-top: none;
           }
           h3{
             margin: 0;
@@ -101,6 +102,7 @@
               color: #333;
               font-size: 16px;
               line-height: 72px;
+              border-top: 2px solid #ea352d;
             a{
               color: #333;
               text-decoration: none;
