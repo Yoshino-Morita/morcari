@@ -61,6 +61,7 @@ gem "font-awesome-rails"
 gem 'mechanize'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'paperclip'
 
 group :production do
   gem 'unicorn'
