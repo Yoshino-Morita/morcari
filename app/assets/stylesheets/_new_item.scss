@@ -11,6 +11,9 @@
   margin: 0;
   line-height: 1;
 }
+#first-list{
+  margin: 0;
+}
 #first-cursor{
   padding-bottom: 28%;
 }
@@ -34,6 +37,10 @@
 }
 #delivery-children.on{
   display: block;
+}
+#bold{
+  font-weight: 600;
+  font-size: 18px;
 }
 .sell-upload{
   &__box{
@@ -59,15 +66,13 @@
     }
     .sell-dropbox__container{
      width: 620px;
+     height: 186px;
      display: block;
      margin: 16px auto 0;
      .sell-upload__dropbox{
       margin: 0;
-      min-height: 104px;
-      padding: 40px;
+      min-height: 186px;
       position: relative;
-      background: #f5f5f5;
-      border: 1px dashed #ccc;
       font-size: 0;
       text-align: center;
        pre{
@@ -78,6 +83,21 @@
         text-align: center;
         font-size: 14px;
         line-height: 1.5;
+       }
+       ul{
+        width: 620px;
+        padding: 0px;
+         li{
+          width: 138px;
+          height: 186px;
+          margin-left: 20px;
+          background-color: #f5f5f5;
+          border: 1px dashed #ccc;
+          background-image: url(https://d2v9k5u4v94ulw.cloudfront.net/assets/images/35323/original/280ea972-2a2c-44a2-bf31-a2e858a47149?1499942068);
+          background-size: contain;
+          background-position: center;
+          float: left;
+         }
        }
      }
     }
@@ -133,6 +153,63 @@
       transform: translate(0, -50%);
       }
    }
+  .form-group__price{
+    height: 48px;
+    padding-bottom: 24px;
+    .form-group__left{
+      line-height: 48px;
+      float: left;
+    }
+    .form-group__right{
+        float: right;
+      .price-input{
+        width: 100%;
+        margin:0 15px 0 0;
+        div{
+          display: inline-block;
+        }
+     }
+    }
+  }
+  li{
+    clear: both;
+    list-style: none;
+    padding: 24px 0;
+    border-top: 1px solid #ccc;
+    .form-group__left{
+      font-size: 14px;
+      float: left;
+    }
+    .form-group__right{
+      float:right;
+    }
+  }
+}
+.sell-btn-box{
+  padding: 40px;
+  border-top: 1px solid #eee;
+  p{
+    font-size: 14px;
+    margin: 0;
+    a{
+      color: #0099e8;
+      text-decoration: none;
+    }
+  }
+  .btn-gray{
+    width: 45%;
+    margin: 24px auto 0;
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    display: block;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
 }
 .clearfix:after {
     content: '';
