@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    @user = current_user
   end
 
   def create
@@ -42,6 +43,10 @@ class UsersController < ApplicationController
 
   def complete
     @user = current_user
+  end
+
+  def mylist
+   @user = current_user
   end
 
   private
