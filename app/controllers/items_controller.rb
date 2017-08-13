@@ -15,7 +15,11 @@ class ItemsController < ApplicationController
    else
     render 'new'
    end
+  end
 
+  def show
+    @user = current_user
+    @item =  Item.find(params[:id])
   end
 
   private

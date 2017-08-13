@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
   def mylist
    @user = current_user
+   @items = current_user.items.order("created_at DESC")
   end
 
   private
