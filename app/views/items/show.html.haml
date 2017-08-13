@@ -1,0 +1,97 @@
+.default-container
+  %header.morcari-header
+    = render 'items/top_header'
+  %nav.bread-crumbs
+    %ul
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "メルカリ", root_path, {itemprop: "url"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "マイページ", "/users/current_user.id" , {itemprop: "title"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "出品した商品 - 出品中", "/users/#{@user.id}/mylist" , {itemprop: "title"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        %span{itemprop: "title"}
+          出品商品画面
+  %main.mypage-container.clearfix
+    .item-box
+      %section.item-box__container
+        %h2.item-box__name
+          = @item.name
+        .item-main__content
+          .item-main__image
+          %table.item-main__detail
+            %tbody
+              %tr
+                %th
+                  出品者
+                %td
+                  = @item.user.nickname
+              %tr
+                %th
+                  カテゴリー
+                %td
+                  = @item.category_large_id
+                  = @item.category_middle_id
+                  = @item.category_small_id
+              %tr
+                %th
+                  ブランド
+                %td
+                  = @item.brand_id
+              %tr
+                %th
+                  商品のサイズ
+                %td
+                  = @item.size
+              %tr
+                %th
+                  商品の状態
+                %td
+                  = @item.condition
+              %tr
+                %th
+                  配送料の負担
+                %td
+                  = @item.delivery_charge
+              %tr
+                %th
+                  配送の方法
+                %td
+                  = @item.how_to_delivery
+              %tr
+                %th
+                  配送元地域
+                %td
+                  = @item.area_id
+              %tr
+                %th
+                  発送日の目安
+                %td
+                  = @item.shipping_dates
+        .item-main__pricebox
+          %span.item-main__price
+            = "¥#{@item.price}"
+          %span
+            (税  ¥0)
+          %span.item-main__shipfee
+            送料込み
+        .item-main__description
+          = @item.description
+      .item-change__box
+        = link_to "商品の編集",root_path, class: 'btn-default btn-red'
+        %p.item-text__center
+          or
+        = link_to "出品を一旦停止する",root_path, class: 'btn-default btn-gray'
+        = link_to "この商品を削除する",root_path, class: 'btn-default btn-gray'
+      .item-detail__message
+        .item-message__container
+          .item-message__content
+    .mypage-side
+      = render "users/mypage/mypage_sidebar"
+  %div.morcari-app__banner
+    = image_tag("app-banner.jpg", class: "app-image")
+  %footer.morcari-footer
+    = render 'items/top_footer'
