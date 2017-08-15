@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/users/entrance', to: 'users#entrance', as: 'entrance'
 
-  resources :items, only: [:index, :new, :create, :edit, :update, :delete, :show]
+  resources :items
 
   resources :users, only: [:create, :edit, :update, :delete, :show]  do
     get 'address'

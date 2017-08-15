@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
     $('.delivery-parent').on('change',function(){
       var val = $(this).prop('selectedIndex') - 1;
       console.log(val);

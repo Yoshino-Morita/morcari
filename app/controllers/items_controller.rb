@@ -11,10 +11,23 @@ class ItemsController < ApplicationController
   def create
    @item = Item.new(item_params)
    if @item.save
+      if params[:images]
+         params[:images].each { |image|
+         @item.images.create(image: image)
+          }
+      end
     redirect_to root_path
    else
     render 'new'
    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+       @item.destroy
+       ridirect_to 'user_mylist_path'
+    end
   end
 
   def show
