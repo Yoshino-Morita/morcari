@@ -21,7 +21,24 @@
         %h2.item-box__name
           = @item.name
         .item-main__content
-          .item-main__image
+          .item-image
+            .item-carousel
+              .item-carousel__box
+                .item-carousel__stage
+                  - @item.images.each do |image|
+                    .item-carousel__list
+                      .item-carousel__inner
+                        = image_tag image.image.url
+            .item-disable__menu
+              .item-disable__prev
+                prev
+              .item-disable__next
+                next
+            .item-list__images
+              - @item.images.each_with_index do |image, i|
+                %span
+                .item-list__image{data: { id: i}}
+                  = image_tag image.image.url
           %table.item-main__detail
             %tbody
               %tr
@@ -85,10 +102,14 @@
         %p.item-text__center
           or
         = link_to "出品を一旦停止する",root_path, class: 'btn-default btn-gray'
-        = link_to "この商品を削除する",root_path, class: 'btn-default btn-gray'
+        = link_to "この商品を削除する","/items/#{@item.id}",method: :delete, class: 'btn-default btn-gray'
       .item-detail__message
         .item-message__container
           .item-message__content
+            %p
+              相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %textarea
+            = link_to "コメントする",root_path, class: 'btn-default btn-red message-btn'
     .mypage-side
       = render "users/mypage/mypage_sidebar"
   %div.morcari-app__banner

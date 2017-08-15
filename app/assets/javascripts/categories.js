@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
     $('.category-large').on('change',function(){
       var selected_val = $(this).val();
       console.log(selected_val);

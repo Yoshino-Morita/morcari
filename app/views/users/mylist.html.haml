@@ -33,7 +33,6 @@
               %li.mypage-item__listbox#selling-box
                 = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
                   %figure
-                    / = image_tag(item.images.first.image.url)
                     = image_tag item.images.first.image.url
                   .mypage-list__body
                     .mypage-list__text
