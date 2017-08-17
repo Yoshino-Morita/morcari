@@ -18,36 +18,21 @@ class UsersController < ApplicationController
 
   #初回ユーザー登録
 
-  def address
-    @user = current_user
-    @areas = Area.select("name")
-  end
-
-  def address_create
-    user = current_user
-    if user.update(user_params)
-      redirect_to user_credit_path
-    end
-  end
-
-  def credit
-    @user = current_user
-  end
-
-  def credit_create
-    user = current_user
-    if user.update(user_params)
-      redirect_to user_complete_path
-    end
-  end
-
   def complete
     @user = current_user
   end
 
-  def mylist
+  def my_list
    @user = current_user
    @items = current_user.items.order("created_at DESC")
+  end
+
+  def transaction_list
+   @user = current_user
+  end
+
+  def sell_end_list
+   @user = current_user
   end
 
   private

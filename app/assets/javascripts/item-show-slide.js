@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+ $(document).on('turbolinks:load', function(){
     //写真1枚の幅を取得
     var itemSlideWidth = $('.item-carousel__list').width();
     console.log(itemSlideWidth);
@@ -8,9 +8,9 @@ $(document).on('turbolinks:load', function(){
     console.log(itemSlideNum);
 
     //写真全体の幅を計算し、設定する(= '.item-carousel__stage')
-    var itemSetWidth = itemSlideWidth * itemSlideNum;
-    $('.item-carousel__stage').css('width', itemSetWidth);
-    console.log(itemSetWidth);
+    var itemTotalWidth = itemSlideWidth * itemSlideNum;
+    $('.item-carousel__stage').css('width', itemTotalWidth);
+    console.log(itemTotalWidth);
 
     //スライドの初期値を設定
     var itemSlideCurrent = 0;
