@@ -3,7 +3,27 @@ class ItemsController < ApplicationController
   before_action :set_item_image
 
   def index
+    category_and_item_select
   end
+
+  def category_and_item_select
+   #トップビューで表示するカテゴリーを取得する
+   @categories = []
+   #初期値
+   category_num = 1
+     while category_num <= 3 do
+       @category = Category.find(category_num)
+       @categories << @category
+       category_num += 1
+     end
+     @items = []
+     #itemに振り分けるカテゴリーを配列から取り出す
+     @categories.each do |category|
+     @item = Item.where(category_large_id: category.id)
+     @items << @item
+     end
+  end
+
 
   def new
   end

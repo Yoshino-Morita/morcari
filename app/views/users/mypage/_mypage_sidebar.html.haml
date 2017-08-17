@@ -1,7 +1,7 @@
 %nav.mypage-side__nav
   %ul.mypage-side__list
     %li
-      = link_to  "/users/current_user.id" , {class: "mypage-side__item", id: "active"} do
+      = link_to  "/users/#{current_user.id}" , {class: "mypage-side__item", id: "active"} do
         マイページ
         %i.fa.fa-chevron-right#active
     %li
@@ -21,15 +21,15 @@
         出品する
         %i.fa.fa-chevron-right
     %li
-      = link_to user_mylist_path(@user), {class: "mypage-side__item"} do
+      = link_to user_my_list_path(@user), {class: "mypage-side__item"} do
         出品した商品 - 出品中
         %i.fa.fa-chevron-right
     %li
-      = link_to root_path, {class: "mypage-side__item"} do
+      = link_to user_transaction_list_path(@user), {class: "mypage-side__item"} do
         出品した商品 - 取引中
         %i.fa.fa-chevron-right
     %li
-      = link_to root_path, {class: "mypage-side__item"} do
+      = link_to user_sell_end_list_path(@user), {class: "mypage-side__item"} do
         出品した商品 - 売却済み
         %i.fa.fa-chevron-right
     %li
@@ -49,11 +49,11 @@
         評価一覧
         %i.fa.fa-chevron-right
     %li
-      = link_to root_path, {class: "mypage-side__item"} do
+      = link_to 'https://www.mercari.com/jp/help_center/', {class: "mypage-side__item"} do
         ガイド
         %i.fa.fa-chevron-right
     %li
-      = link_to root_path, {class: "mypage-side__item"} do
+      = link_to 'https://www.mercari.com/jp/mypage/support/', {class: "mypage-side__item"} do
         お問い合わせ
         %i.fa.fa-chevron-right
   %h3.mypage-side__head

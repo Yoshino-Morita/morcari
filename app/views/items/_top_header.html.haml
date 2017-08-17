@@ -18,7 +18,7 @@
       - if user_signed_in?
         %ul.user-nav
           %li
-            = link_to "/users/current_user.id" do
+            = link_to "/users/#{current_user.id}" do
               = image_tag("member_photo_noimage_thumb.png")
               マイページ
           %li
