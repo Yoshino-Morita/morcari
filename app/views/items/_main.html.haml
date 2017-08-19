@@ -94,12 +94,10 @@
         = @categories[0].name
       .item-box__content
         - @items[0].each do |item|
-          %section#left-content.items-box
-            %a{ href: 'https://www.mercari.com/jp/'}
+          %section.items-box
+            = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
               %figure.items-box__photo
-                = image_tag("sample.jpg", class: "items-image")
-                / = image_tag(item.images.first.image.url, class: "items-image")
-                / = image_tag item.images.first.image.url
+                = image_tag(item.images.first.image.url, class: "items-image")
               .items-box__body
                 %h3.items-box__name
                   = item.name
@@ -108,251 +106,145 @@
                     = "¥#{item.price}"
                   %p.items-box__tax
                     (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /   %section#other-content.items-box__container
-  /     %h3.items-box__text
-  /       = @categories[1].name
-  /     .item-box__content
-  /       %section#left-content.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /   %section#other-content.items-box__container
-  /     %h3.items-box__text
-  /       = @categories[2].name
-  /     .item-box__content
-  /       %section#left-content.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  / %section.morcari__template#morcari-brand
-  /   %h2.pickup-head
-  /     ピックアップブランド
-  /   %section.items-box__container
-  /     %h3#brand-title.items-box__text
-  /       ヴィトン
-  /     .item-box__content
-  /       %section#left-content.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /   .non
-  /   %section.items-box__container
-  /     %h3#brand-title.items-box__text
-  /       ヴィトン
-  /     .item-box__content
-  /       %section#left-content.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
-  /       %section.items-box
-  /         %a{ href: 'https://www.mercari.com/jp/'}
-  /           %figure.items-box__photo
-  /             = image_tag("sample.jpg", class: "items-image")
-  /           .items-box__body
-  /             %h3.items-box__name
-  /               ルイヴィトン
-  /             .items-box__num
-  /               .items-box__price
-  /                 ¥ 800
-  /               %p.items-box__tax
-  /                 (税 ¥ 0)
+    %section#other-content.items-box__container
+      %h3.items-box__text
+        = @categories[1].name
+      .item-box__content
+        - @items[1].each do |item|
+          %section#left-content.items-box
+            = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
+              %figure.items-box__photo
+                = image_tag(item.images.first.image.url, class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  = item.name
+                .items-box__num
+                  .items-box__price
+                    = "¥#{item.price}"
+                  %p.items-box__tax
+                    (税 ¥ 0)
+    %section#other-content.items-box__container
+      %h3.items-box__text
+        = @categories[2].name
+      .item-box__content
+        - @items[2].each do |item|
+          %section#left-content.items-box
+            = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
+              %figure.items-box__photo
+                = image_tag(item.images.first.image.url, class: "items-image")
+              .items-box__body
+                %h3.items-box__name
+                  = item.name
+                .items-box__num
+                  .items-box__price
+                    = "¥#{item.price}"
+                  %p.items-box__tax
+                    (税 ¥ 0)
+  %section.morcari__template#morcari-brand
+    %h2.pickup-head
+      ピックアップブランド
+    %section.items-box__container
+      %h3#brand-title.items-box__text
+        ヴィトン
+      .item-box__content
+        %section#left-content.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+        %section.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+        %section.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+        %section.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+    .non
+    %section.items-box__container
+      %h3#brand-title.items-box__text
+        ヴィトン
+      .item-box__content
+        %section#left-content.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+        %section.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+        %section.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)
+        %section.items-box
+          %a{ href: 'https://www.mercari.com/jp/'}
+            %figure.items-box__photo
+              = image_tag("sample.jpg", class: "items-image")
+            .items-box__body
+              %h3.items-box__name
+                ルイヴィトン
+              .items-box__num
+                .items-box__price
+                  ¥ 800
+                %p.items-box__tax
+                  (税 ¥ 0)

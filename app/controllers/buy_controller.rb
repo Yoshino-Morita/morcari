@@ -1,6 +1,8 @@
 class BuyController < ApplicationController
 
   def index
+    @user = current_user
+    @item = Item.find(params[:item_id])
   end
 
   def buy
