@@ -1,7 +1,7 @@
 class Image < ActiveRecord::Base
   belongs_to :item
 
-    # photoをattachファイルとする。stylesで画像サイズを定義できる
+  # photoをattachファイルとする。stylesで画像サイズを定義できる
   has_attached_file :image,
   styles: { medium: "300x300>", thumb: "100x100>" },
   url: "/assets/item_images"

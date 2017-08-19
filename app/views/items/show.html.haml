@@ -96,7 +96,7 @@
           %span.item-main__shipfee
             送料込み
         - if current_user.id != @item.user_id
-          = link_to "購入",root_path, class: 'btn-default btn-red item-buy'
+          = link_to "購入", "/items/#{@item.id}/buy", class: 'btn-default btn-red item-buy'
         .item-main__description
           = @item.description
       - if current_user.id == @item.user_id
