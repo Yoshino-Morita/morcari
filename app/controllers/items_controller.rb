@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
 
   def create
    @item = Item.new(item_params)
+   @item.status = "出品中"
    if @item.save
       if params[:images]
          params[:images].each { |image|
@@ -42,6 +43,21 @@ class ItemsController < ApplicationController
    end
   end
 
+
+  def show
+    @user = current_user
+    @item = Item.find(params[:id])
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+
+  end
+
+
   def destroy
     @item = Item.find(params[:id])
     if @item.user_id == current_user.id
@@ -50,15 +66,26 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-    @user = current_user
-    @item =  Item.find(params[:id])
-  end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :category_large_id,:category_middle_id, :category_small_id, :size, :brand_id, :condition, :delivery_charge, :how_to_delivery, :area_id, :shipping_dates, :price, images_attributes: [:id, :image]).merge(user_id: current_user.id)
+    params.require(:item).permit(
+      :name,
+      :description,
+      :category_large_id,
+      :category_middle_id,
+      :category_small_id,
+      :size,
+      :brand_id,
+      :condition,
+      :delivery_charge,
+      :how_to_delivery,
+      :area_id,
+      :shipping_dates,
+      :price,
+      :status,
+      images_attributes: [:id, :image]).merge(user_id: current_user.id)
   end
 
   def image_params
