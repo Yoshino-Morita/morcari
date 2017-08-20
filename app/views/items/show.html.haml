@@ -101,7 +101,7 @@
           = @item.description
       - if current_user.id == @item.user_id
         .item-change__box
-          = link_to "商品の編集",root_path, class: 'btn-default btn-red'
+          = link_to "商品の編集", "/items/#{@item.id}/edit", class: 'btn-default btn-red'
           %p.item-text__center
             or
           = link_to "出品を一旦停止する",root_path, class: 'btn-default btn-gray'
