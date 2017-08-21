@@ -33,8 +33,9 @@
                     支払い金額
                   .buy-price__money
                     = "¥#{@item.price}"
-              %div.btn-red.btn-default
-                購入する
+              = link_to "購入する",user_path(), {contoroller: 'buy', action: 'buy'}, class: "btn-red btn-default"
+              / %div.btn-red.btn-default
+              /   購入する
           %section.buy-content
             .buy-content__inner
               %h3
