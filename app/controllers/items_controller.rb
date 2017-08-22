@@ -59,11 +59,25 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.user_id == current_user.id
        @item.destroy
        redirect_to 'user_mylist_path'
     end
+  end
+
+
+  def buy_page
+    @user = current_user
+    @item = Item.find(params[:item_id])
+  end
+
+  def buy
+    @user = current_user
+    @item = Item.find(params[:item_id])
+    @item.buyer_id = current_user.id
+    @item.status = "取引完了"
+    @item.save
+    redirect_to root_path
   end
 
 

@@ -1,0 +1,39 @@
+.default-container
+  %header.morcari-header
+    = render 'items/top_header'
+  %nav.bread-crumbs
+    %ul
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "メルカリ", root_path, {itemprop: "url"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "マイページ", "/users/#{current_user.id}" , {itemprop: "title"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        %span{itemprop: "title"}
+          購入した商品 - 取引中
+  %main.mypage-container.clearfix
+    .mypage-content
+      %section.mypage-tab__container
+        %h2.mypage-tab__head#selling-title
+          購入した商品
+        %ul.mypages-tabs
+          %li
+            %h3
+              = link_to "取引中", user_transaction_list_path(@user)
+          %li
+            %h3#non-active
+              = link_to "過去の取引", user_trading_performance_path(@user)
+        .tab-content
+          %ul.mypage-item__list#mypage-tab__transaction
+            %li.mypage-item__listbox#selling-box
+              .mypage-list__body
+                .mypage-list__text
+                %div#non-exist-item
+                  取引中の商品はありません
+    .mypage-side
+      = render "users/mypage/mypage_sidebar"
+  %div.morcari-app__banner
+    = image_tag("app-banner.jpg", class: "app-image")
+  %footer.morcari-footer
+    = render 'items/top_footer'
