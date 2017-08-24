@@ -1,0 +1,64 @@
+.default-container
+  %header.morcari-header
+    = render 'items/top_header'
+  %nav.bread-crumbs
+    %ul
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "メルカリ", root_path, {itemprop: "url"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "マイページ", "/users/current_user.id" , {itemprop: "title"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "出品した商品 - 出品中", "/users/#{@user.id}/mylist" , {itemprop: "title"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        = link_to "出品商品画面", "/users/#{@user.id}/mylist" , {itemprop: "title"}
+        %i.fa.fa-chevron-right
+      %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
+        %span{itemprop: "title"}
+          購入完了画面
+  %main.mypage-container.clearfix
+    .mypage-side
+      %nav.mypage-side__nav
+        %h3.mypage-side__head
+          取引情報
+        .transact-info__inner
+          %ul.transact-info__table
+            %li.transact-info__list
+              %span.transact-info__title
+                商品
+              %ul
+                %li.transact-info__detail
+            %li.transact-info__list
+              %span.transact-info__title
+                送料
+              %ul
+                %li.transact-info__detail
+            %li.transact-info__list
+              %span.transact-info__title
+                販売手数料
+              %ul
+                %li.transact-info__detail
+            %li.transact-info__list
+              %span.transact-info__title
+                販売利益
+              %ul
+                %li.transact-info__detail
+            %li.transact-info__list
+              %span.transact-info__title
+                購入日時
+              %ul
+                %li.transact-info__detail
+            %li.transact-info__list
+              %span.transact-info__title
+                商品ID
+              %ul
+                %li.transact-info__detail
+%div.morcari-side__banner
+  = image_tag("side-banner.jpg", class: "side-image")
+
+  %div.morcari-app__banner
+    = image_tag("app-banner.jpg", class: "app-image")
+  %footer.morcari-footer
+    = render 'items/top_footer'

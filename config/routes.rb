@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :items do
       get 'buy'
       get 'buy_page'
+      get 'buy_done'
   end
 
   resources :users, only: [:create, :edit, :update, :delete, :show]  do

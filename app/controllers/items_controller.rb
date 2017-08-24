@@ -77,9 +77,13 @@ class ItemsController < ApplicationController
     @item.buyer_id = current_user.id
     @item.status = "取引完了"
     @item.save
-    redirect_to root_path
+    redirect_to item_buy_done_path
   end
 
+  def buy_done
+    @user = current_user
+    @item = Item.find(params[:item_id])
+  end
 
   private
 
