@@ -25,12 +25,36 @@
             %h3
               = link_to "過去の取引", user_trading_performance_path(@user)
         .tab-content
-          %ul.mypage-item__list#mypage-tab__transaction
-            %li.mypage-item__listbox#selling-box
-              .mypage-list__body
-                .mypage-list__text
-                %div#non-exist-item
-                  取引中の商品はありません
+          - if @items.present?
+            - @items.each do |item|
+              %ul.mypage-item__list#mypage-tab__transaction
+                %li.mypage-item__listbox#selling-box
+                  = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
+                    %figure
+                      = image_tag item.images.first.image.url
+                    .mypage-list__body
+                      .mypage-list__text
+                        = item.name
+                      %div
+                        %span.lisiting-item__count
+                          %i.fa.fa-heart-o
+                          %span
+                            0
+                        %span.lisiting-item__count
+                          %i.fa.fa-comment-o
+                          %span
+                            0
+                        .mypage-item__status#sell-done
+                          = item.status
+                    %i.fa.fa-chevron-right
+          - else
+            .tab-content
+              %ul.mypage-item__list#mypage-tab__transaction
+                %li.mypage-item__listbox#selling-box
+                  .mypage-list__body
+                    .mypage-list__text
+                    %div#non-exist-item
+                      取引中の商品はありません
     .mypage-side
       = render "users/mypage/mypage_sidebar"
   %div.morcari-app__banner

@@ -114,7 +114,8 @@
             %textarea
             = link_to "コメントする",root_path, class: 'btn-default btn-red message-btn'
     .mypage-side
-      = render "users/mypage/mypage_sidebar"
+      %div.morcari-side__banner
+        = image_tag("side-banner.jpg", class: "side-image")
   %div.morcari-app__banner
     = image_tag("app-banner.jpg", class: "app-image")
   %footer.morcari-footer

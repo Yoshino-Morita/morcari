@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
    @user = current_user
+   @items = current_user.items
   end
 
   def create
@@ -24,7 +25,8 @@ class UsersController < ApplicationController
 
   def my_list
    @user = current_user
-   @items = current_user.items.order("created_at DESC")
+   #出品中itemsのみビューに渡す。
+   @items = current_user.items.order("created_at DESC").select {|item| item.status == "出品中"}
   end
 
   def transaction_list
@@ -33,6 +35,8 @@ class UsersController < ApplicationController
 
   def sell_end_list
    @user = current_user
+   #出品中itemsのみビューに渡す。
+   @items = current_user.items.order("created_at DESC").select {|item| item.status == "取引完了"}
   end
 
   def open_trade
@@ -41,6 +45,7 @@ class UsersController < ApplicationController
 
   def trading_performance
    @user = current_user
+   @items = Item.all.select {|item| item.buyer_id == current_user.id}
   end
 
   private
