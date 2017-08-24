@@ -93,7 +93,7 @@
       %h3.items-box__text
         = @categories[0].name
       .item-box__content
-        - @items[0].each do |item|
+        - @items[0][0..3].each do |item|
           %section.items-box
             = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
               %figure.items-box__photo
@@ -110,7 +110,7 @@
       %h3.items-box__text
         = @categories[1].name
       .item-box__content
-        - @items[1].each do |item|
+        - @items[1][0..3].each do |item|
           %section#left-content.items-box
             = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
               %figure.items-box__photo
@@ -127,7 +127,7 @@
       %h3.items-box__text
         = @categories[2].name
       .item-box__content
-        - @items[2].each do |item|
+        - @items[2][0..3].each do |item|
           %section#left-content.items-box
             = link_to "/items/#{item.id}",class: "mypage-item__link", id: "link-box" do
               %figure.items-box__photo
