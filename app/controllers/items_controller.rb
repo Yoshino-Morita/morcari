@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
      @items = []
      #itemに振り分けるカテゴリーを配列から取り出す
      @categories.each do |category|
-     @item = Item.where(category_large_id: category.id)
+     @item = Item.where(category_large_id: category.id).select{|item| item.buyer_id == nil}
      @items << @item
      end
   end
