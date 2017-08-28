@@ -1,0 +1,96 @@
+#list-gray{
+  background-color: #fafafa;
+}
+.transact-left__content{
+  float: left;
+  width: 280px;
+  margin-right: 30px;
+ .transact-left__nav{
+  .transact-left__head{
+    font-size: 16px;
+    margin: 0;
+   }
+  .transact-info__inner{
+    margin-top: 8px;
+    background-color: #fff;
+    .transact-info__table{
+     width: 100%;
+     padding: 0;
+     border: 1px solid #eee;
+     display: table;
+     .transact-info__list{
+      line-height: 1.5;
+      list-style: none;
+      .transact-info__title{
+        display: table-cell;
+        padding: 16px;
+        vertical-align: top;
+        word-wrap: break-word;
+       }
+      ul{
+        width: 65%;
+        display: table-cell;
+        padding: 16px;
+        vertical-align: top;
+        word-wrap: break-word;
+        .transact-info__detail{
+          line-height: 1.5;
+          list-style: none;
+        }
+      }
+     }
+   }
+  }
+ }
+ .side-user__info{
+  margin-top: 40px;
+  .side-user__head{
+    font-size: 16px;
+   }
+  .side-user__inner{
+   height: 72px;
+   margin-top: 8px;
+   background-color: #ffffff;
+    figure{
+      margin: 0;
+      padding: 16px;
+      position: relative;
+      div{
+       overflow: hidden;
+       display: inline-block;
+       width: 40px;
+       height: 40px;
+       border-radius: 50%;
+       vertical-align: middle;
+       img{
+        width: 100%;
+        vertical-align: middle;
+        }
+       }
+      figcaption{
+        width: 160px;
+        display: inline-block;
+       .transact-user__name{
+        width: 100%;
+        line-height: 2.5;
+        overflow: visible;
+        text-overflow: inherit;
+        white-space: normal;
+       }
+      }
+     }
+    .fa-chevron-right{
+     position: absolute;
+     top: 50%;
+     right: 16px;
+     transform: translate(0, -50%);
+    }
+   }
+  }
+ .morcari-side__banner{
+  margin-top: 40px;
+  img{
+    width: 280px;
+  }
+ }
+}

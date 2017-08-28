@@ -18,10 +18,57 @@
       %li{itemscope: "", itemtype: "http://data-vocabulary.org/Breadcrumb"}
         %span{itemprop: "title"}
           購入完了画面
-  %main.mypage-container.clearfix
-    .mypage-side
-      %nav.mypage-side__nav
-        %h3.mypage-side__head
+  %main.transact-container.clearfix
+    .transact-right__content
+      %h2.right-content__head
+        取引画面
+      .transact-attention
+        %h3
+          %i.fa.fa-truck
+          %span
+            らくらくメルカリ便で発送する
+        %p
+          商品が購入され支払いされました。発送してください。らくらくメルカリ便では、コンビニへの持ち込み、ヤマト営業所への持ち込み、またはご自宅への集荷依頼を選択できます。
+      %ul.transact-guide
+        %li
+          = link_to "https://www.mercari.com/jp/help_center/article/63/" do
+            %span
+              商品が売れた後の流れ
+            %i.fa.fa-chevron-right
+        %li
+          = link_to "https://www.mercari.com/jp/help_center/category/2/" do
+            %span
+              出品者のよくある質問
+            %i.fa.fa-chevron-right
+        %li
+          = link_to "https://www.mercari.com/jp/help_center/category/13/" do
+            %span
+              らくらくメルカリ便とは？
+            %i.fa.fa-chevron-right
+      .transact-button
+        .btn-default.btn-red
+          コンビニから発送
+      .transact-button
+        .btn-default.btn-red
+          ヤマトの営業所へ持ち込んで発送
+      .transact-button
+        .btn-default.btn-red
+          ヤマトの集荷サービスを利用して発送
+      %p.transact-shipping__fee
+        集荷料¥30が追加されます
+      .transact-button
+        .btn-default.btn-radius
+          らくらくメルカリ便を使わない
+      .transact-wordings
+        %h4
+          ※配送のお問い合わせは
+          = link_to "こちら", "https://www.mercari.com/jp/mypage/support/",target: "_blank"
+          よりお願いします。
+        %p
+          (ヤマト運輸への直接のお問い合わせ、ご回答等はできませんのでご了承ください)
+    .transact-left__content
+      %nav.transact-left__nav
+        %h3.transact-left__head
           取引情報
         .transact-info__inner
           %ul.transact-info__table
@@ -30,7 +77,7 @@
                 商品
               %ul
                 %li.transact-info__detail
-            %li.transact-info__list
+            %li.transact-info__list#list-gray
               %span.transact-info__title
                 送料
               %ul
@@ -40,7 +87,7 @@
                 販売手数料
               %ul
                 %li.transact-info__detail
-            %li.transact-info__list
+            %li.transact-info__list#list-gray
               %span.transact-info__title
                 販売利益
               %ul
@@ -50,14 +97,25 @@
                 購入日時
               %ul
                 %li.transact-info__detail
-            %li.transact-info__list
+            %li.transact-info__list#list-gray
               %span.transact-info__title
                 商品ID
-              %ul
+              %uls
                 %li.transact-info__detail
-%div.morcari-side__banner
-  = image_tag("side-banner.jpg", class: "side-image")
-
+      %section.side-user__info
+        // link_to を入れる
+        %h3.side-user__head
+          購入者情報
+        .side-user__inner
+          %figure
+            %div
+              = image_tag("member_photo_noimage_thumb.png")
+            %figcaption
+              .transact-user__name
+                もりもりた
+          %i.fa.fa-chevron-right
+      %div.morcari-side__banner
+        = image_tag("side-banner.jpg", class: "side-image")
   %div.morcari-app__banner
     = image_tag("app-banner.jpg", class: "app-image")
   %footer.morcari-footer
