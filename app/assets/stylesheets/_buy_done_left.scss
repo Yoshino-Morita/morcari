@@ -22,6 +22,8 @@
       line-height: 1.5;
       list-style: none;
       .transact-info__title{
+        width: 98px;
+        font-size: 14px;
         display: table-cell;
         padding: 16px;
         vertical-align: top;
@@ -34,6 +36,7 @@
         vertical-align: top;
         word-wrap: break-word;
         .transact-info__detail{
+          font-size: 14px;
           line-height: 1.5;
           list-style: none;
         }
@@ -51,42 +54,48 @@
    height: 72px;
    margin-top: 8px;
    background-color: #ffffff;
-    figure{
-      margin: 0;
-      padding: 16px;
+    a{
+      color: #333;
       position: relative;
-      div{
-       overflow: hidden;
-       display: inline-block;
-       width: 40px;
-       height: 40px;
-       border-radius: 50%;
-       vertical-align: middle;
-       img{
-        width: 100%;
-        vertical-align: middle;
+      display: block;
+      text-decoration: none;
+      figure{
+        margin: 0;
+        padding: 16px;
+        div{
+         overflow: hidden;
+         display: inline-block;
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         vertical-align: middle;
+         img{
+          width: 100%;
+          vertical-align: middle;
+          }
+         }
+        figcaption{
+          width: 120px;
+          display: inline-block;
+          overflow: hidden;
+          margin: 0 0 0 16px;
+          vertical-align: middle;
+         .transact-user__name{
+          width: 70%;
+          line-height: 2.5;
+          overflow: visible;
+          text-overflow: inherit;
+          white-space: normal;
+         }
         }
        }
-      figcaption{
-        width: 160px;
-        display: inline-block;
-       .transact-user__name{
-        width: 100%;
-        line-height: 2.5;
-        overflow: visible;
-        text-overflow: inherit;
-        white-space: normal;
-       }
-      }
-     }
-    .fa-chevron-right{
-     position: absolute;
-     top: 50%;
-     right: 16px;
-     transform: translate(0, -50%);
+    .fa.fa-chevron-right{
+     text-align: center;
+     position: relative;
     }
    }
   }
+ }
  .morcari-side__banner{
   margin-top: 40px;
   img{

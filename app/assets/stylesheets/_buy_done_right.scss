@@ -1,3 +1,7 @@
+#review-container{
+  height: 60px;
+}
+
 main.transact-container{
   width: 1020px;
   margin: 40px auto 0;
@@ -25,6 +29,12 @@ main.transact-container{
         color: #ea352d;
         margin: 0;
         .fa-truck{
+        font-size: 32px;
+        margin: 0 8px 0 0;
+        color: #ea352d;
+        vertical-align: middle;
+        }
+        .fa-check{
         font-size: 32px;
         margin: 0 8px 0 0;
         color: #ea352d;
@@ -74,11 +84,13 @@ main.transact-container{
       font-size: 14px;
       color: #ea352d;
       text-align: center;
+      margin: 0;
       padding: 0 32px 16px;
      }
     .transact-wordings{
       text-align: center;
       line-height: 1.5;
+      margin-bottom: 15px;
       padding: 16px 32px;
       h4{
         font-size: 14px;
@@ -92,6 +104,113 @@ main.transact-container{
         font-size: 14px;
         margin: 0;
        }
+     }
+    .transact-review{
+      color: #7e7e7e;
+      font-weight: 600;
+      padding-top: 30px;
+      background-color: #eee;
+     }
+    .transact-review__checkbox{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      margin-top: 10px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      .checkbox-input{
+        display: none;
+       }
+      .checkbox-parts{
+        margin-right: 20px;
+        padding-left: 20px;
+        position: relative;
+       }
+      .checkbox-parts::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        border: 2px solid #ea352d;
+        border-radius: 4px;
+       }
+      .checkbox-input:checked + .checkbox-parts{
+        color: #ea352d;
+       }
+      .checkbox-input:checked + .checkbox-parts::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: 5px;
+        width: 7px;
+        height: 14px;
+        transform: rotate(40deg);
+        border-bottom: 3px solid #ea352d;
+        border-right: 3px solid #ea352d;
+       }
+      span{
+        p{
+          font-size: 16px;
+          margin: 0;
+          margin-left: 10px;
+          display: inline;
+        }
+       }
+      }
+    .transact-review__select{
+     .review-select__icon{
+      font-size: 35px;
+      text-align: center;
+      .fa-smile-o{
+        color: #FFB6C1;
+       }
+      .fa-meh-o{
+        color: #F0E68C;
+        margin: 0 80px;
+       }
+      .fa-frown-o{
+        color: #87CEEB;
+       }
+      }
+     }
+    .review-select__evaluation{
+      width: 270px;
+      margin: 0 auto;
+      font-weight: 600;
+      display: -webkit-box;
+     .review-comment__normal{
+      margin-left: 88px;
+      }
+     .review-comment__bad{
+      margin-left: 90px;
+      }
+     }
+    .review-select__button{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+     }
+    .review-write__comment{
+      width: 100%;
+      height: 45%;
+      background-color: #fff;
+      margin-top: 8px;
+     .review-comment__container{
+      padding: 24px;
+      .review-comment__content{
+       p{
+         font-size: 14px;
+         color: #7e7e7e;
+         margin: 0;
+         padding: 8px;
+       }
+      }
+     }
     }
   }
 }
