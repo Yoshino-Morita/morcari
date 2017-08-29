@@ -19,53 +19,96 @@
         %span{itemprop: "title"}
           購入完了画面
   %main.transact-container.clearfix
-    .transact-right__content
-      %h2.right-content__head
-        取引画面
-      .transact-attention
-        %h3
-          %i.fa.fa-truck
-          %span
-            らくらくメルカリ便で発送する
-        %p
-          商品が購入され支払いされました。発送してください。らくらくメルカリ便では、コンビニへの持ち込み、ヤマト営業所への持ち込み、またはご自宅への集荷依頼を選択できます。
-      %ul.transact-guide
-        %li
-          = link_to "https://www.mercari.com/jp/help_center/article/63/" do
+    = form_for(@review) do |f|
+      .transact-right__content
+        %h2.right-content__head
+          取引画面
+        .transact-attention
+          %h3
+            %i.fa.fa-truck
             %span
-              商品が売れた後の流れ
-            %i.fa.fa-chevron-right
-        %li
-          = link_to "https://www.mercari.com/jp/help_center/category/2/" do
+              らくらくメルカリ便で発送する
+          %p
+            商品が購入され支払いされました。発送してください。らくらくメルカリ便では、コンビニへの持ち込み、ヤマト営業所への持ち込み、またはご自宅への集荷依頼を選択できます。
+        %ul.transact-guide
+          %li
+            = link_to "https://www.mercari.com/jp/help_center/article/63/" do
+              %span
+                商品が売れた後の流れ
+              %i.fa.fa-chevron-right
+          %li
+            = link_to "https://www.mercari.com/jp/help_center/category/2/" do
+              %span
+                出品者のよくある質問
+              %i.fa.fa-chevron-right
+          %li
+            = link_to "https://www.mercari.com/jp/help_center/category/13/" do
+              %span
+                らくらくメルカリ便とは？
+              %i.fa.fa-chevron-right
+        .transact-button
+          .btn-default.btn-red
+            コンビニから発送
+        .transact-button
+          .btn-default.btn-red
+            ヤマトの営業所へ持ち込んで発送
+        .transact-button
+          .btn-default.btn-red
+            ヤマトの集荷サービスを利用して発送
+        %p.transact-shipping__fee
+          集荷料¥30が追加されます
+        .transact-button
+          .btn-default.btn-radius
+            らくらくメルカリ便を使わない
+        .transact-wordings
+          %h4
+            ※配送のお問い合わせは
+            = link_to "こちら", "https://www.mercari.com/jp/mypage/support/",target: "_blank"
+            よりお願いします。
+          %p
+            (ヤマト運輸への直接のお問い合わせ、ご回答等はできませんのでご了承ください)
+        .transact-attention#review-container
+          %h3
+            %i.fa.fa-check
             %span
-              出品者のよくある質問
-            %i.fa.fa-chevron-right
-        %li
-          = link_to "https://www.mercari.com/jp/help_center/category/13/" do
-            %span
-              らくらくメルカリ便とは？
-            %i.fa.fa-chevron-right
-      .transact-button
-        .btn-default.btn-red
-          コンビニから発送
-      .transact-button
-        .btn-default.btn-red
-          ヤマトの営業所へ持ち込んで発送
-      .transact-button
-        .btn-default.btn-red
-          ヤマトの集荷サービスを利用して発送
-      %p.transact-shipping__fee
-        集荷料¥30が追加されます
-      .transact-button
-        .btn-default.btn-radius
-          らくらくメルカリ便を使わない
-      .transact-wordings
-        %h4
-          ※配送のお問い合わせは
-          = link_to "こちら", "https://www.mercari.com/jp/mypage/support/",target: "_blank"
-          よりお願いします。
-        %p
-          (ヤマト運輸への直接のお問い合わせ、ご回答等はできませんのでご了承ください)
+              評価をしてください
+          %p
+            商品の発送/受取が完了しました。
+            取引相手の評価を行なって、取引を完了してください。
+        .transact-review
+          評価
+        .transact-review__checkbox
+          %label
+            %input{type: "checkbox",class: "checkbox-input"}
+            %span.checkbox-parts
+              %p
+                取引内容を確認しました
+        .transact-review__select
+          .review-select__icon
+            %i.fa.fa-smile-o
+            //良い
+            %i.fa.fa-meh-o
+            //普通
+            %i.fa.fa-frown-o
+            //悪い
+          .review-select__evaluation
+            .review-comment__good
+              良い
+            .review-comment__normal
+              普通
+            .review-comment__bad
+              悪い
+          .review-select__button
+            %input{type: "radio",class: "checkbox-input"}
+            %input{type: "radio",class: "checkbox-input"}
+            %input{type: "radio",class: "checkbox-input"}
+          .review-write__comment
+            .review-comment__container
+              .review-comment__content
+                %p
+                  評価のコメントを記入しましょう
+                %textarea
+                = link_to "評価を投稿する",root_path, class: 'btn-default btn-red message-btn'
     .transact-left__content
       %nav.transact-left__nav
         %h3.transact-left__head
@@ -77,43 +120,50 @@
                 商品
               %ul
                 %li.transact-info__detail
+                  = @item.name
+                  //= image_tag @image.url
             %li.transact-info__list#list-gray
               %span.transact-info__title
                 送料
               %ul
                 %li.transact-info__detail
+                  = @item.delivery_charge
             %li.transact-info__list
               %span.transact-info__title
                 販売手数料
               %ul
                 %li.transact-info__detail
+                  = "¥#{@sales_commission}"
             %li.transact-info__list#list-gray
               %span.transact-info__title
                 販売利益
               %ul
                 %li.transact-info__detail
+                  = "¥#{@profit}"
             %li.transact-info__list
               %span.transact-info__title
                 購入日時
               %ul
                 %li.transact-info__detail
+                  = @item.updated_at
             %li.transact-info__list#list-gray
               %span.transact-info__title
                 商品ID
-              %uls
+              %ul
                 %li.transact-info__detail
+                  = @item.id
       %section.side-user__info
-        // link_to を入れる
         %h3.side-user__head
           購入者情報
         .side-user__inner
-          %figure
-            %div
-              = image_tag("member_photo_noimage_thumb.png")
-            %figcaption
-              .transact-user__name
-                もりもりた
-          %i.fa.fa-chevron-right
+          = link_to root_path, {class: "mypage-side__item"} do
+            %figure
+              %div
+                = image_tag("member_photo_noimage_thumb.png")
+              %figcaption
+                .transact-user__name
+                  もりもりた
+              %i.fa.fa-chevron-right
       %div.morcari-side__banner
         = image_tag("side-banner.jpg", class: "side-image")
   %div.morcari-app__banner

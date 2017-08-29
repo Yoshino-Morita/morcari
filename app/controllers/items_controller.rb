@@ -83,6 +83,13 @@ class ItemsController < ApplicationController
   def buy_done
     @user = current_user
     @item = Item.find(params[:item_id])
+    @image = @item.images.first
+    @sales_commission = ((@item.price)*0.1).floor
+    @profit = (@item.price - @sales_commission)
+  end
+
+  def create_review
+    @review = Review.new(review_params)
   end
 
   private
@@ -107,12 +114,23 @@ class ItemsController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:image, :item_id)
+    params.require(:image).permit(
+      :image,
+      :item_id)
+  end
+
+  def review_params
+    params.require(:review).permit(
+      :evaluation,
+      :text,
+      :user_id,
+      :buyer_id).merge(user_id:@item.user_id , buyer_id: current_user.id)
   end
 
   def set_item_image
    @item = Item.new
    @item.images.build
   end
+
 end
 
