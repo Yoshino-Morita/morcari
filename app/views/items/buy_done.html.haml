@@ -19,7 +19,7 @@
         %span{itemprop: "title"}
           購入完了画面
   %main.transact-container.clearfix
-    = form_for(@review) do |f|
+    = form_for @review, :url => {:action => :create_review} do |f|
       .transact-right__content
         %h2.right-content__head
           取引画面
@@ -99,16 +99,22 @@
             .review-comment__bad
               悪い
           .review-select__button
-            %input{type: "radio",class: "checkbox-input"}
-            %input{type: "radio",class: "checkbox-input"}
-            %input{type: "radio",class: "checkbox-input"}
+            %label
+              = f.radio_button :evaluation,"good", class: "radio-input"
+              %span.radio-parts
+            %label
+              = f.radio_button :evaluation,"normal", class: "radio-input"
+              %span.radio-parts
+            %label
+              = f.radio_button :evaluation,"bad", class: "radio-input"
+              %span.radio-parts
           .review-write__comment
             .review-comment__container
               .review-comment__content
                 %p
                   評価のコメントを記入しましょう
-                %textarea
-                = link_to "評価を投稿する",root_path, class: 'btn-default btn-red message-btn'
+                = f.text_area :text, rows: "2", placeholder: "このコメントは、取引完了後に評価一覧で公開されます。商品に問題がある場合などは、評価をせずに取引メッセージで伝えましょう。", class: 'review-textarea'
+                = f.submit "評価を投稿する", class: 'btn-default btn-red message-btn'
     .transact-left__content
       %nav.transact-left__nav
         %h3.transact-left__head
