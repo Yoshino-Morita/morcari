@@ -83,13 +83,19 @@ class ItemsController < ApplicationController
   def buy_done
     @user = current_user
     @item = Item.find(params[:item_id])
-    @image = @item.images.first
-    @sales_commission = ((@item.price)*0.1).floor
-    @profit = (@item.price - @sales_commission)
+    #itemの値を先に取り出しておく
+      @image = @item.images.first
+      @sales_commission = ((@item.price)*0.1).floor
+      @profit = (@item.price - @sales_commission)
+    @review = Review.new
   end
 
   def create_review
+    @item = Item.find(params[:item_id])
     @review = Review.new(review_params)
+    if @review.save
+      redirect_to root_path
+    end
   end
 
   private
