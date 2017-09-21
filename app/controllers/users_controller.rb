@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   #初回ユーザー登録
-
   def complete
    @user = current_user
   end
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
 
   def sell_end_list
    @user = current_user
-   #出品中itemsのみビューに渡す。
+   #取引完了itemsのみビューに渡す。
    @items = current_user.items.order("created_at DESC").select {|item| item.status == "取引完了"}
   end
 
